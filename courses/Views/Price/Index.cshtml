@@ -1,0 +1,34 @@
+﻿@using courses.ViewModels;
+@model PriceViewModel;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!-- main-container -->
+<section class="main">
+    <div class="container">
+        <table>
+            <th>Название курса</th>
+            <th>Описание курса</th>
+            <th>Стоимость курса</th>
+            @foreach (var item in Model.Courses)
+            {                
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.ShortDescription</td>
+                    <td>@item.Price</td>
+                </tr>
+            }
+        </table>
+    </div>
+</section>
+<!-- end-main-containe -->
+
+<!-- footer -->
+<footer>
+    <p class="footer-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis ex non saepe cumque repellendus officia.</p>
+</footer>
+<!-- end-footer -->

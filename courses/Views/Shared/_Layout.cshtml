@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - courses</title>
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/aboutCompany.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/aboutUs.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/price.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/result.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/signIn.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- header container -->
+    <header>
+        <div class="container">
+            <div class="container-header">
+                <div class="header-left">
+                    <a href="Home">
+                        <div class="header-logo">
+                            <span class="logo-image"><img src="./img/logo.svg.svg" alt=""></span>
+                            <span class="span-h1">Военные курсы</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="header-name">
+                    <nav>
+                        <ul class="header-center1">
+                            <li><a href="AboutUs">О курсе</a></li>
+                            <div class="vl"></div>
+                            <li><a href="AboutCompany">О компании</a></li>
+                            <div class="vl"></div>
+                            <li><a href="Result">Результат</a></li>
+                            <div class="vl"></div>
+                            <li><a href="Price">Стоимость</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="header-right">
+                    <div class="header-right1">
+                        <a class="login-button" href="Account/Login">Вход</a>
+                        <a class="sign-button" href="../New FrontEnd CoursesSite/sign-in.html">Регистрация</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container-hl">
+                <div class="hl"></div>
+            </div>
+        </div>
+    </header>
+    <!-- end-header-container -->
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - courses - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
