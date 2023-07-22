@@ -1,0 +1,54 @@
+﻿@using courses.ViewModels;
+@model RegisterViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!-- login -->
+<div class="container-sign-in">
+    <form asp-action="Register" class="ui-form">
+        <h3>Войти</h3>
+        @if (TempData["Error"] != null)
+        {
+            <div>
+                <span><b>Извините!</b> - @TempData["Error"]</span>
+            </div>
+        }
+        <div class="form-row">
+            <input asp-for="Name" type="text" id="name">
+            <label asp-for="Name">Имя</label>
+        </div>
+        <div class="form-row">
+            <input asp-for="Surname" type="text" id="surname">
+            <label asp-for="Surname">Фамилия</label>
+        </div>
+        <div class="form-row">
+            <input asp-for="Patronymic" type="text" id="patronymic">
+            <label asp-for="Patronymic">Отчество</label>
+        </div>
+        <div class="form-row">
+            <input asp-for="PhoneNumber" type="tel" id="phoneNumber" required autocomplete="off">
+            <label asp-for="PhoneNumber">Номер телефона</label>
+        </div>
+        <div class="form-row">
+            <input asp-for="EmailAddress" type="email" id="email" required autocomplete="off">
+            <label asp-for="EmailAddress">Почта</label>
+        </div>
+        <div class="form-row">
+            <input asp-for="Password" type="password" id="password" required autocomplete="off">
+            <label asp-for="Password">Пароль</label>
+        </div>
+        <div class="form-row">
+            <input asp-for="ConfirmPassword" type="password" id="confirmPassword" required autocomplete="off">
+            <label asp-for="ConfirmPassword">Пароль</label>
+        </div>
+        <p>
+            <input type="submit" value="Регистрация">
+            <a asp-controller="Home" asp-action="Index">Домашняя</a>
+        </p>
+    </form>
+</div>
+<!-- end-login -->

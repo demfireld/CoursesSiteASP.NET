@@ -87,7 +87,7 @@ namespace courses.DataBase
                         UserSurname = "Kirilov",
                         UserPatronymic = "Andreevich",
                         Email = adminUserEmail,
-                        EmailConfirmed = true,
+                        EmailConfirmed = true
                     };
                     await userManager.CreateAsync(newAdminUser, "Maksim12088!");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
