@@ -79,6 +79,10 @@ namespace courses.DataBase
                 string adminUserEmail = "gamew5177@gmail.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
+                /*--------------------------------------------------------------------------------------------------
+                Надо будет изменить блок кода ниже так, чтобы открывалась страница и запрашивала данные для нового
+                админа если его не существует.
+                --------------------------------------------------------------------------------------------------*/
                 if (adminUser == null)
                 {
                     var newAdminUser = new AppUser()
@@ -89,7 +93,7 @@ namespace courses.DataBase
                         Email = adminUserEmail,
                         EmailConfirmed = true
                     };
-                    await userManager.CreateAsync(newAdminUser, "Maksim12088!");
+                    await userManager.CreateAsync(newAdminUser, "Coding1234!!");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
             }
