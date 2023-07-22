@@ -89,9 +89,10 @@ namespace courses.Controllers
             if (newUserResponse.Succeeded)
             {
                 await _userManager.AddToRoleAsync(newUser, UserRoles.User);
+                return View("Login");
             }
 
-            return View("Login");
+            return View("Register");
         }
         
         [HttpGet]
