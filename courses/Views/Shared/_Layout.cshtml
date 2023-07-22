@@ -28,21 +28,21 @@
                 <div class="header-name">
                     <nav>
                         <ul class="header-center1">
-                            <li><a href="AboutUs">О курсе</a></li>
+                            <li><a asp-controller="AboutUs" asp-action="Index">О курсе</a></li>
                             <div class="vl"></div>
-                            <li><a href="AboutCompany">О компании</a></li>
+                            <li><a asp-controller="AboutCompany" asp-action="Index">О компании</a></li>
                             <div class="vl"></div>
-                            <li><a href="Result">Результат</a></li>
+                            <li><a asp-controller="Result" asp-action="Index">Результат</a></li>
                             <div class="vl"></div>
-                            <li><a href="Price">Стоимость</a></li>
+                            <li><a asp-controller="Price" asp-action="Index">Стоимость</a></li>
                         </ul>
                     </nav>
                 </div>
 
                 <div class="header-right">
                     <div class="header-right1">
-                        <a class="login-button" href="Account/Login">Вход</a>
-                        <a class="sign-button" href="Account/Register">Регистрация</a>
+                        <a class="login-button" asp-controller="Account" asp-action="Login">Вход</a>
+                        <a class="sign-button" asp-controller="Account" asp-action="Register">Регистрация</a>
                     </div>
                 </div>
 
