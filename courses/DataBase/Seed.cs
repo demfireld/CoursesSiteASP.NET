@@ -20,41 +20,84 @@ namespace courses.DataBase
                     {
                         new Categories()
                         {
-                            CategoryName = "Куртки"
+                            CategoryName = "Зимние"
                         },
                         new Categories()
                         {
-                            CategoryName = "Шапки"
+                            CategoryName = "Весенние"
                         },
                         new Categories()
                         {
-                            CategoryName = "Балаклавы"
+                            CategoryName = "Летние"
+                        },
+                        new Categories()
+                        {
+                            CategoryName = "Осенние"
                         }
                     });
                     context.SaveChanges();
                 }
+
                 if (!context.Courses.Any())
                 {
                     context.Courses.AddRange(new List<Courses>()
                     {
                         new Courses()
                         {
-                            Name = "Зимняя куртка",
+                            Name = "Молодой боец",
                             ShortDescription = "Короткое описание",
                             LongDescription = "Длинное описание",
                             Img = "путь до картинки",
                             Price = 99.99,
-                            CategoryId = 1
+                            CategoryId = 3
                         },
 
                         new Courses()
                         {
-                            Name = "Балаклава в виде летней расцветки",
+                            Name = "Зимний летчик",
                             ShortDescription = "Короткое описание",
                             LongDescription = "Длинное описание",
                             Img = "путь до картинки",
                             Price = 342.99,
-                            CategoryId = 3
+                            CategoryId = 1
+                        }
+                    });
+                    context.SaveChanges();
+                }
+
+                if (!context.Teachers.Any())
+                {
+                    context.Teachers.AddRange(new List<Teachers>()
+                    {
+                        new Teachers()
+                        {
+                            TeacherName = "Валерий",
+                            TeacherSurname = "Бережной",
+                            TeacherPatronymic = "Владимирович",
+                            TeacherAge = 35,
+                            TeacherWorkExperience = 10,
+                            TeacherPhoneNumber = "+71234567890",
+                            TeacherAddress = "Москва",
+                            TeacherImg = "fdggg"
+                        }
+                    });
+                    context.SaveChanges();
+                }
+
+                if (!context.Staffs.Any())
+                {
+                    context.Staffs.AddRange(new List<Staffs>()
+                    {
+                        new Staffs()
+                        {
+                            StaffName = "Назари",
+                            StaffSurname = "Кирилов",
+                            StaffPatronymic = "Андреевич",
+                            StaffAge = 19,
+                            StaffWorkExperience = 1,
+                            StaffPhoneNumber = "+71234567890",
+                            StaffAddress = "Жуковский",
+                            StaffImg = "fdfdf"
                         }
                     });
                     context.SaveChanges();
@@ -79,10 +122,7 @@ namespace courses.DataBase
                 string adminUserEmail = "gamew5177@gmail.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
-                /*--------------------------------------------------------------------------------------------------
-                Надо будет изменить блок кода ниже так, чтобы открывалась страница и запрашивала данные для нового
-                админа если его не существует.
-                --------------------------------------------------------------------------------------------------*/
+
                 if (adminUser == null)
                 {
                     var newAdminUser = new AppUser()

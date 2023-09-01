@@ -7,8 +7,8 @@ namespace courses.Controllers
 {
     public class PriceController : Controller
     {
-        private List<Courses> _courses;
-        private List<Categories> _categories;
+        private readonly List<Courses> _courses;
+        private readonly List<Categories> _categories;
 
         public PriceController(ApplicationDbContext context)
         {
