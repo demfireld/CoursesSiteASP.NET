@@ -5,7 +5,7 @@
 namespace courses.Migrations
 {
     /// <inheritdoc />
-    public partial class AddRegister : Migration
+    public partial class updateDataBase2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
