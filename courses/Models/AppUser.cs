@@ -5,7 +5,8 @@ namespace courses.Models
 {
     public class AppUser : IdentityUser
     {
-        public string UserSurname { get; set; }
-        public string UserPatronymic { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string? Patronymic { get; set; }
     }
 }
