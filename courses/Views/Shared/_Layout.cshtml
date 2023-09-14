@@ -38,14 +38,23 @@
                         </ul>
                     </nav>
                 </div>
-
-                <div class="header-right">
-                    <div class="header-right1">
-                        <a class="login-button" asp-controller="Account" asp-action="Login">Вход</a>
-                        <a class="sign-button" asp-controller="Account" asp-action="Register">Регистрация</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="header-right">
+                        <div class="header-right1">
+                            <a class="logout-button" asp-controller="Account" asp-action="Logout">Выход</a>
+                        </div>
                     </div>
-                </div>
-
+                }
+                else
+                {
+                    <div class="header-right">
+                        <div class="header-right1">
+                            <a class="login-button" asp-controller="Account" asp-action="Login">Вход</a>
+                            <a class="sign-button" asp-controller="Account" asp-action="Register">Регистрация</a>
+                        </div>
+                    </div>
+                }
             </div>
             <div class="container-hl">
                 <div class="hl"></div>
