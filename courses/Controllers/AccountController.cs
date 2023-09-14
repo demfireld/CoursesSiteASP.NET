@@ -47,11 +47,11 @@ namespace courses.Controllers
                     }
                 }
                 //Password is incorrect
-                TempData["Error"] = "Wrong credentials. Please try again";
+                TempData["Error"] = "Ошибка данных. Попробуйте ещё раз!";
                 return View(loginViewModel);
             }
             //User not found
-            TempData["Error"] = "Wrong credentials. Please try again";
+            TempData["Error"] = "Ошибка данных. Попробуйте ещё раз!";
             return View(loginViewModel);
         }
 
@@ -77,9 +77,10 @@ namespace courses.Controllers
 
             var newUser = new AppUser()
             {
-                UserName = registerViewModel.Name,
-                UserSurname = registerViewModel.Surname,
-                UserPatronymic = registerViewModel.Patronymic,
+                UserName = registerViewModel.EmailAddress,
+                Name = registerViewModel.Name,
+                Surname = registerViewModel.Surname,
+                Patronymic = registerViewModel.Patronymic,
                 PhoneNumber = registerViewModel.PhoneNumber,
                 Email = registerViewModel.EmailAddress
             };

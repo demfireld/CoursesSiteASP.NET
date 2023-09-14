@@ -21,5 +21,10 @@ namespace courses.Controllers
             PriceViewModel priceViewModel = new PriceViewModel { Courses = _courses, Categories = _categories };
             return View(priceViewModel);
         }
+
+        //public IActionResult Create()
+        //{
+        //    return View();
+        //}
     }
 }
