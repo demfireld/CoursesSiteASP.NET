@@ -127,13 +127,14 @@ namespace courses.DataBase
                 {
                     var newAdminUser = new AppUser()
                     {
-                        UserName = "Nazar",
-                        UserSurname = "Kirilov",
-                        UserPatronymic = "Andreevich",
+                        Name = "Nazar",
+                        Surname = "Kirilov",
+                        Patronymic = "Andreevich",
                         Email = adminUserEmail,
+                        UserName = adminUserEmail,
                         EmailConfirmed = true
                     };
-                    await userManager.CreateAsync(newAdminUser, "Coding1234!!");
+                    await userManager.CreateAsync(newAdminUser, "Joker1234!");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
             }
