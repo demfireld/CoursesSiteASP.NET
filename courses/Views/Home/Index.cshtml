@@ -1,5 +1,5 @@
-﻿@using courses.ViewModels;
-@model HomeViewModel;
+﻿@* @using courses.ViewModels;
+@model HomeViewModel; *@
 
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -7,70 +7,69 @@
 @{
 }
 
-<!-- main-container -->
+
+<!-- main -->
 <section class="main">
     <div class="container">
-        <div class="main-text">
-            <h1>Не ну очень крутое название курса</h1>
-            <span class="main-text">не очень крутое описание курса ну прям середняк я бы сказал что никто не читает это ну нам надо сюда обязательно что то вставить так что да............</span>
-        </div>
-        <div class="main-buttons">
-            <a class="button-main_one" href="">Записаться на обучение</a>
-            <a class="button-main_two" href="../New FrontEnd CoursesSite/about_us.html">О программе</a>
+        <div class="column">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <h1 class="main-title">Наш курс "Каскад"!</h1>
+                <span class="main-span">Описание курса lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, magni?</span>
+            </div>
+            <div id="buttons-main" class="col-xl-12 col-lg-12 col-md-12 col-12">
+                <a class="button-main1" href="#">Записаться на обучение</a>
+                <a class="button-main2" href="#">О программе</a>
+            </div>
+
+            <!-- courses -->
+            <div class="course-description">
+                <h1 class="course-text">Описание курса</h1>
+            </div>
+            <!-- end-courses -->
         </div>
     </div>
 </section>
-<!-- end-main-container -->
-<!-- description-container -->
-<section class="description-section">
+<!-- end-main -->
+<!-- text-information -->
+<!-- coach -->
+<section class="coach-section">
     <div class="container">
-        <div class="description-block">
-            <h1>Описание курса</h1>
-            <div class="description-flex">
-                <div class="description-span">
-                    <span>здесь будет явно какой-нибудь текст</span>
-                </div>
-                <div class="training">
-                    <span class="training-one">9</span>
-                    <span class="training__one">месяцев обучения</span>
-                    <span class="training-two">100+</span>
-                    <span class="training__two">обучение тактикам боя</span>
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                <h4 class="coach-h4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat ipsa illum pariatur aut quisquam ipsum fugiat. Cupiditate amet natus reprehenderit placeat officia eaque vitae aliquid, possimus odit perspiciatis nisi quisquam. Ab illo itaque exercitationem nostrum expedita architecto iste deserunt tempore error magnam quam provident, alias adipisci nobis sequi, ducimus sed?</h4>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                <div class="coach-spans d-flex justify-content-end">
+                    <span class="coach-span1">9</span>
+                    <span class="coach-span2">месяцев обучения</span>
+                    <span class="coach-span3">100+</span>
+                    <span class="coach-span4">обучение тактикам боя</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- end-description-container -->
-<!-- photo-section -->
-<section class="photos">
+<!-- end-coach -->
+<!-- end-text-information -->
+<!-- photo-information     -->
+<section class="photo-slider">
     <div class="container">
-        <div class="photo-text">
-            <div class="photos-block">
-                <div class="photos-block_one">
-                    <img src="./img/Без названия.jfif" alt="">
-                    <img src="./img/Без названия.jfif" alt="">
-                </div>
-                <div class="photos-block_two">
-                    <img src="./img/Без названия.jfif" alt="">
-                    <img src="./img/Без названия.jfif" alt="">
-                </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="photo-h2">Квалифицированные тренеры</h2>
             </div>
-
-            <div class="photos-text">
-@*                @foreach (var item in Model.Teachers)
-                {
-                    <p>@item.TeacherName</p>
-
-                }*@
-                <span class="span-photos">не ну тут не реально крутые преподаватели и люди ну и вообще</span>
+            <div class="row">
+                <div class="col-lg-2 col-md-6 col-12">
+                    <img src="img/kamni-bereg-solnce.jpg" alt="">
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <img src="img/kamni-bereg-solnce.jpg" alt="">
+                </div>
+                <div class="col-lg-2 col-md-6 col-12">
+                    <img src="img/kamni-bereg-solnce.jpg" alt="">
+                </div>
             </div>
         </div>
     </div>
 </section>
-<!-- end-photo-section -->
-
-<!-- footer -->
-<footer>
-    <p class="footer-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis ex non saepe cumque repellendus officia.</p>
-</footer>
-<!-- end-footer -->
+<!-- end-photo-information -->
