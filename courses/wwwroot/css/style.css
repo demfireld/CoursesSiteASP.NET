@@ -1,321 +1,197 @@
-﻿/*Медиазапросы*/
-@media screen and (max-width: 5) {
-}
-
-@media screen and (max-width: 768px) {
-}
-
-@media screen and (max-width: 998px) {
-}
-
-@media screen and (max-width: 1200px) {
-    .header-name {
-        width: 40%;
+/* Медиазапросы */
+@media screen and (max-width: 575px) {
+    .main-title {
+        font-size: 50px
     }
 }
 
-@media screen and (max-width: 2000px) {
-    .header-name {
-        width: 40%;
+@media screen and (min-width: 575px) {
+    .main-title {
+        font-size: 70px
     }
 }
 
-* {
+@media screen and (min-width: 767px) {
+    .main-title {
+        font-size: 70px
+    }
+}
+
+@media screen and (min-width: 998px) {
+    .main-title {
+        font-size: 100px
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .main-title {
+        font-size: 128px
+    }
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+*, body, html {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
+  }
 
-html {
-    background-image: url(../img/backgroung.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+  html {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+  }
 
-.container {
-    max-width: 1320px;
-    margin: auto;
-}
+  header {
+    margin-bottom: 2%;
+  }
 
 
-
-
-/* header */
-header {
-    padding-bottom: 40px;
-}
-
-.container-header {
-    display: flex;
-    justify-content: space-between;
-    height: 100px;
-    align-items: center;
-    font-family: 'Trebuchet MS', sans-serif;
-    margin: auto;
-}
-
-.header-left {
-    margin: 5px;
-    padding: 5px;
-    flex: 0 1 auto;
-}
-
-    .header-left a {
-        text-decoration: none;
-    }
-
-.header-logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-
-.span-h1 {
+/* header--------------- */
+.title {
     color: white;
-    font-size: 27px;
-    margin-left: 5px;
-    border: 3px solid white;
-    border-radius: 30px;
-    padding: 7px;
 }
 
-.header-name {
-    margin: 5px;
-    padding: 5px;
-    flex: 0 1 auto;
+.title-h2 {
+    margin: auto;
 }
 
-.header-center1 {
+.title:hover {
+    color:rgb(182, 182, 182);
+}
+
+
+
+.nav {
+    justify-content: center;
+    font-size: 18px;
+}
+
+.nav-link {
+    color: white
+}
+
+.nav-link:hover {
+    color:rgb(182, 182, 182);
+}
+
+
+
+.nav-connect {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
-}
-
-    .header-center1 li {
-        font-size: 20px;
-        list-style-type: none;
-    }
-
-        .header-center1 li a {
-            text-decoration: none;
-            color: white;
-        }
-
-.vl {
-    border-left: 2px solid rgb(255, 255, 255);
-    height: 30px;
-}
-
-.header-right {
-    margin: 5px;
-    padding: 5px;
-    flex: 0 1 auto;
-}
-
-.header-right1 {
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .login-button {
-    border: 3px solid white;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 20px;
     color: white;
-    text-align: center;
-    padding: 7px;
+    font-size: 18px
 }
-
 .sign-button {
-    background-color: #66C05D;
-    border: 5px solid #66C05D;
-    ;
-    border-radius: 12px;
-    text-decoration: none;
-    font-size: 20px;
+    color:white;
+    font-size: 18px
+}
+
+
+
+/* main--------------- */
+.main-title {
+    font-weight: 900;
+}
+
+#buttons-main {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-span {
+    font-size: 30px;
+    font-family: 'Oswald-Light';
+    font-weight: 550;
+}
+
+.button-main1 {
+    font-size: 23px;
     color: black;
-    padding: 7px
-}
-
-.container-hl {
-    display: flex;
-    justify-content: center;
-}
-
-.hl {
-    border: 1px solid rgb(255, 255, 255);
-    width: 100%;
-}
-
-
-
-
-/* main */
-.main {
-    padding-bottom: 60px;
-}
-
-.main-text {
-    color: white;
-}
-
-    .main-text h1 {
-        font-size: 110px;
-        padding-bottom: 50px;
-        width: 80%;
-    }
-
-    .main-text span {
-        display: inherit;
-        font-size: 40px;
-        width: 40%;
-        padding-bottom: 50px;
-    }
-
-.main-buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.button-main_one {
-    font-size: 25px;
     border: 2px solid #66C05D;
     background-color: #66C05D;
-    color: rgb(0, 0, 0);
-    padding: 25px;
     border-radius: 15px;
-    text-decoration: none;
+    padding: 10px 10px 10px;
 }
 
-.button-main_two {
-    font-size: 25px;
-    border: 2px solid white;
-    color: rgb(255, 255, 255);
-    padding: 25px;
+.button-main2 {
+    font-size: 23px;
+    color: black;
+    border: 2px solid black;
     border-radius: 15px;
-    text-decoration: none;
+    padding: 10px 10px 10px;
 }
 
-
-
-
-/* information-page */
-.description-section {
-    padding-bottom: 100px;
+.course-description {
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-.description-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.course-text {
+    font-size: 70px;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-bottom: 5%;
 }
 
-.description-block h1 {
-    color: white;
-    font-size: 95px;
-    padding-bottom: 30px;
+.coach-section {
+    padding-bottom: 5%;
 }
 
-.description-span {
-    font-size: 30px;
-    border: 4px solid #66C05D;
-    border-top-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    padding: 30px;
-    color: white;
-    width: 50%;
-    align-self: stretch;
+.coach-h4 {
+    padding: 30px 30px 30px;
+    border: 2px solid rgb(114, 114, 114);
 }
 
-.training {
-    display: flex;
-    align-items: flex-end;
+.coach-spans {
     flex-direction: column;
+    align-items: end;
 }
 
-.training-one {
-    font-size: 110px;
+.coach-span1 {
+    font-size: 60px;
+    font-weight: 600;
     color: #66C05D;
-    padding-right: 10%;
+    text-shadow: 0px 2px 4px black;
 }
 
-.training__one {
+.coach-span2 {
     font-size: 40px;
-    color: white;
+    font-weight: 400;
 }
 
-.training-two {
-    font-size: 110px;
+.coach-span3 {
+    font-size: 60px;
+    font-weight: 600;
     color: #66C05D;
-    padding-right: 5%;
+    text-shadow: 0px 2px 4px black;
 }
 
-.training__two {
+.coach-span4 {
     font-size: 40px;
-    color: white;
+    font-weight: 400;
 }
 
 
-
-/* photo-section */
-.photos {
-    padding-bottom: 60px;
+.photo-h2 {
+    padding-bottom: 3%;
 }
 
-.photos-block {
-    flex: 0 0 auto;
-    width: 50%;
+.photo-slider {
+    padding-bottom: 5%;
 }
 
-.photo-text {
-    display: flex;
-    justify-content: space-between;
-}
-
-.photos-text span {
-    color: white;
-    font-size: 56px;
-    word-wrap: break-word;
-}
-
-.photos-text {
-    width: 50%;
-}
-
-.photos-block_one > img {
-    width: 280px;
-}
-
-.photos-block_two > img {
-    width: 280px;
-}
-
-.photos-block_one {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 50px 30px 0;
-}
-
-.photos-block_two {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 50px;
-}
-
-.photos-block img {
-    border: 4px solid #66C05D
-}
-
-/* footer */
-footer {
-    color: white;
-    text-align: center;
-    font-size: 50px;
-    background-color: #000000;
+/* footer--------------- */
+footer li{
+    list-style-type: square;
 }
