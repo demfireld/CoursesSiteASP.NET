@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - courses</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" asp-append-version="true">
-    <link rel="stylesheet" href="./css/style.css" asp-append-version="true" />
-@*     <link rel="stylesheet" href="~/css/aboutCompany.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/aboutUs.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/price.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/result.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/signIn.css" asp-append-version="true" /> *@
-
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
 </head>
 <body>
     <!-- header -->
@@ -20,45 +14,43 @@
             <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-3 col-md-6">
                     <h2 class="title-h2">
-                        <img src="./img/logo.svg.svg" alt="">
-                        <a class="title" href="#">Военные курсы</a>
+                        <img src="~/img/logo.svg.svg" alt="">
+                        <a class="title" asp-controller="Home" asp-action="Index">Военные курсы</a>
                     </h2>
                 </div>
 
                 <div class="col-xl-6 col-lg-6 d-none d-lg-block">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="AboutUs" asp-action="Index">О компании</a>
+                            <a class="nav-link active" asp-controller="AboutCompany" asp-action="Index">О компании</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">О нас</a>
+                            <a class="nav-link" asp-controller="Reviews" asp-action="Index">Отзывы</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Отзывы</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Курсы</a>
+                            <a class="nav-link" asp-controller="Courses" asp-action="Index">Курсы</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="col-xl-3 col-lg-3 col-md-6 col-6 d-none d-lg-block">
                     <div class="nav-connect">
-                        <a class="login-button" href="#">Вход</a>
-                        <a class="sign-button" href="#">Регистрация</a>
+                        <a class="login-button" asp-controller="Account" asp-action="Login">Вход</a>
+                        <a class="sign-button" asp-controller="Account" asp-action="Register">Регистрация</a>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-sm-6 col-6 d-lg-none d-flex justify-content-end">
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="./img/icons8-меню-30.png" alt="">
+                            <img src="../main bs 5.3.1/img/icons8-меню-30.png" alt="">
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">О компании</a></li>
-                            <li><a class="dropdown-item" href="#">О нас</a></li>
-                            <li><a class="dropdown-item" href="#">Отзывы</a></li>
-                            <li><a class="dropdown-item" href="#">Курсы</a></li>
+                            <li><a class="dropdown-item active" asp-controller="AboutCompany" asp-action="Index">О компании</a></li>
+                            <li><a class="dropdown-item" asp-controller="Reviews" asp-action="Index">Отзывы</a></li>
+                            <li><a class="dropdown-item" asp-controller="Courses" asp-action="Index">Курсы</a></li>
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Login">Вход</a></li>
+                            <li><a class="dropdown-item" asp-controller="Account" asp-action="Register">Регистрация</a></li>
                         </ul>
                     </div>
                 </div>
@@ -82,16 +74,13 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#">О компании</a>
+                                <a asp-controller="AboutCompany" asp-action="Index">О компании</a>
                             </li>
                             <li>
-                                <a href="#">О нас</a>
+                                <a asp-controller="Reviews" asp-action="Index">Отзывы</a>
                             </li>
                             <li>
-                                <a href="#">Отзывы</a>
-                            </li>
-                            <li>
-                                <a href="#">Курсы</a>
+                                <a asp-controller="Courses" asp-action="Index">Курсы</a>
                             </li>
                         </ul>
                     </nav>
@@ -100,7 +89,7 @@
                     Контакты
                 </div>
                 <div class="col-xl-2 col-md-4 col-sm-6 col-12 pb-lg-0 pb-md-5 pb-sm-5 pb-5">
-                    Адрес
+                    О нас
                 </div>
             </div>
         </div>

@@ -1,34 +1,38 @@
 ﻿@using courses.ViewModels;
 @model PriceViewModel;
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-<!-- main-container -->
+<!-- main -->
 <section class="main">
     <div class="container">
-        <table>
-            <th>Название курса</th>
-            <th>Описание курса</th>
-            <th>Стоимость курса</th>
-            @foreach (var item in Model.Courses)
-            {                
-                <tr>
-                    <td>@item.Name</td>
-                    <td>@item.ShortDescription</td>
-                    <td>@item.Price</td>
-                </tr>
-            }
-        </table>
+        <div class="row text-center">
+            <h1 class="courses_title">
+                Наши курсы
+            </h1>
+        </div>
+    </div>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-32">
+                @foreach (var item in Model.Courses)
+                {
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="@item.Img" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                            <div class="card-body">
+                                <p class="card-text">@item.ShortDescription</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Записаться</button>
+                                    </div>
+                                    <small class="text-body-secondary">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
 </section>
-<!-- end-main-containe -->
-
-<!-- footer -->
-<footer>
-    <p class="footer-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis ex non saepe cumque repellendus officia.</p>
-</footer>
-<!-- end-footer -->
+<!-- end-main -->

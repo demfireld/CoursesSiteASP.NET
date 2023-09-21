@@ -1,34 +1,25 @@
 ﻿@using courses.ViewModels;
 @model LoginViewModel
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-<!-- login -->
-<div class="container-sign-in">
-    <form asp-action="Login" class="ui-form">
-        <h3>Войти</h3>
-        @if (TempData["Error"] != null)
-        {
-            <div>
-                <span><b>Извините!</b> - @TempData["Error"]</span>
+<!-- main -->
+<section class="main">
+    <div class="container">
+        <form asp-action="Login" class="ui-form">
+            <h3>Вход в аккаунт</h3>
+            @if (TempData["Error"] != null)
+            {
+                <div>
+                    <span><b>Извините!</b> - @TempData["Error"]</span>
+                </div>
+            }
+            <div class="form-row">
+                <input asp-for="EmailAddress" type="email" id="email" required autocomplete="off" placeholder="Почта">
             </div>
-        }
-        <div class="form-row">
-            <input asp-for="EmailAddress" type="email" id="email" required autocomplete="off">
-            <label asp-for="EmailAddress">Почта</label>
-        </div>
-        <div class="form-row">
-            <input asp-for="Password" type="password" id="password" required autocomplete="off">
-            <label asp-for="Password" for="password">Пароль</label>
-        </div>
-        <p>
-            <input type="submit" value="Войти">
-            <a asp-controller="Home" asp-action="Index">Назад</a>
-        </p>
-    </form>
-</div>
-<!-- end-login -->
+            <div class="form-row">
+                <input asp-for="Password" type="password" id="password" required autocomplete="off" placeholder="Пароль">
+            </div>
+            <p><input type="submit" value="Войти"></p>
+        </form>
+    </div>
+</section>
+<!-- end-main -->
