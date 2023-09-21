@@ -2,7 +2,7 @@
 
 namespace courses.Controllers
 {
-    public class ResultController : Controller
+    public class ReviewsController : Controller
     {
         public IActionResult Index()
         {
