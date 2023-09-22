@@ -3,6 +3,7 @@
     public class Staffs
     {
         public int Id { get; set; }
+        public string StaffRole { get; set; }
         public string StaffName { get; set; }
         public string StaffSurname { get; set; }
         public string? StaffPatronymic { get; set; }
