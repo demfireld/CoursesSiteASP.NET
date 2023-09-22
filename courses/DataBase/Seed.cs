@@ -64,44 +64,6 @@ namespace courses.DataBase
                     });
                     context.SaveChanges();
                 }
-
-                if (!context.Teachers.Any())
-                {
-                    context.Teachers.AddRange(new List<Teachers>()
-                    {
-                        new Teachers()
-                        {
-                            TeacherName = "Валерий",
-                            TeacherSurname = "Бережной",
-                            TeacherPatronymic = "Владимирович",
-                            TeacherAge = 35,
-                            TeacherWorkExperience = 10,
-                            TeacherPhoneNumber = "+71234567890",
-                            TeacherAddress = "Москва",
-                            TeacherImg = "fdggg"
-                        }
-                    });
-                    context.SaveChanges();
-                }
-
-                if (!context.Staffs.Any())
-                {
-                    context.Staffs.AddRange(new List<Staffs>()
-                    {
-                        new Staffs()
-                        {
-                            StaffName = "Назари",
-                            StaffSurname = "Кирилов",
-                            StaffPatronymic = "Андреевич",
-                            StaffAge = 19,
-                            StaffWorkExperience = 1,
-                            StaffPhoneNumber = "+71234567890",
-                            StaffAddress = "Жуковский",
-                            StaffImg = "fdfdf"
-                        }
-                    });
-                    context.SaveChanges();
-                }
             }
         }
 

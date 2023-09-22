@@ -8,16 +8,14 @@ namespace courses.Controllers
     public class HomeController : Controller
     {
         private readonly List<Courses> _courses;
-        private readonly List<Teachers> _teachers;
 
         public HomeController(ApplicationDbContext context)
         {
-            _teachers = context.Teachers.ToList();
             _courses = context.Courses.ToList();
         }
         public IActionResult Index()
         {
-            HomeViewModel homeViewModel = new HomeViewModel { Courses = _courses, Teachers = _teachers };
+            HomeViewModel homeViewModel = new HomeViewModel { Courses = _courses };
             return View(homeViewModel);
         }
     }
