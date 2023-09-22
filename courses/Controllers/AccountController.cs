@@ -47,11 +47,11 @@ namespace courses.Controllers
                     }
                 }
                 //Password is incorrect
-                TempData["Error"] = "Ошибка данных. Попробуйте ещё раз!";
+                TempData["Error"] = "Неправильный пароль. Попробуйте ещё раз!";
                 return View(loginViewModel);
             }
             //User not found
-            TempData["Error"] = "Ошибка данных. Попробуйте ещё раз!";
+            TempData["Error"] = "Данного пользователя не существует. Попробуйте ещё раз!";
             return View(loginViewModel);
         }
 
