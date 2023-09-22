@@ -3,6 +3,21 @@
 .main-title {
 font-size: 50px
 }
+.button-main1 {
+    font-size: 15px
+}
+.button-main2 {
+    font-size: 15px
+}
+.coach-span1 {
+    margin-right: 30%;
+}
+.coach-span3 {
+    margin-right: 10%;
+}
+.course-text {
+    font-size: 40px;
+}
 }
 
 @media screen and (min-width: 575px) {
@@ -15,17 +30,44 @@ font-size: 70px
 .main-title {
 font-size: 70px
 }
+.button-main1 {
+    font-size: 23px
+}
+.button-main2 {
+    font-size: 23px
+}
+.course-text {
+    font-size: 50px;
+}
 }
 
 @media screen and (min-width: 998px) {
 .main-title {
 font-size: 100px
 }
+.button-main1 {
+    font-size: 23px
+}
+.button-main2 {
+    font-size: 23px
+}
+.course-text {
+    font-size: 70px;
+}
 }
 
 @media screen and (min-width: 1200px) {
 .main-title {
 font-size: 128px
+}
+.button-main1 {
+    font-size: 23px
+}
+.button-main2 {
+    font-size: 23px
+}
+.course-text {
+    font-size: 70px;
 }
 }
 
@@ -105,7 +147,6 @@ font-family: 'Oswald-Light';
 font-weight: 550;
 }
 .button-main1 {
-font-size: 23px;
 color: black;
 border: 2px solid #66C05D;
 background-color: #66C05D;
@@ -113,7 +154,6 @@ border-radius: 15px;
 padding: 10px 10px 10px;
 }
 .button-main2 {
-font-size: 23px;
 color: black;
 border: 2px solid black;
 border-radius: 15px;
@@ -124,8 +164,7 @@ margin-top: 5%;
 margin-bottom: 5%;
 }
 .course-text {
-font-size: 70px;
-font-family: 'Bebas Neue', sans-serif;
+font-family: 'Georgia';
 margin-bottom: 5%;
 }
 .coach-section {
