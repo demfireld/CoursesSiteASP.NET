@@ -10,7 +10,7 @@
 <!-- main -->
 <section class="main">
     <div class="container">
-        <form asp-action="Login" class="ui-form">
+        <form asp-action="Register" class="ui-form">
             <h3>Регистрация аккаунта</h3>
             @if (TempData["Error"] != null)
             {
@@ -41,7 +41,6 @@
             </div>
             <p>
                 <input type="submit" value="Регистрация">
-                <a asp-controller="Home" asp-action="Index">Домашняя</a>
             </p>
         </form>
     </div>
