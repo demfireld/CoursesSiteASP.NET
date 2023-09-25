@@ -17,6 +17,6 @@ namespace courses.ViewModels
 
         public int CategoryId { get; set; }
 
-        public IEnumerable<Categories> Category { get; set; }
+        public IEnumerable<Categories>? Category { get; set; }
     }
 }

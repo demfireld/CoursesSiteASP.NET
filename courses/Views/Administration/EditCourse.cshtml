@@ -29,13 +29,13 @@
         }
         else
         {
-        <label asp-for="CategoryId">Категория</label>
-        <select asp-for=CategoryId class="form-control form-control-sm">       
-            @foreach (var item in Model.Category)
-            {
-                <option value="@item.Id">@item.CategoryName</option>
-            }
-        </select>   
+            <label asp-for="CategoryId">Категория</label>
+            <select asp-for=CategoryId class="form-control form-control-sm">       
+                @foreach (var item in Model.Category)
+                {
+                    <option value="@item.Id">@item.CategoryName</option>
+                }
+            </select>   
         }
     </div>
 
