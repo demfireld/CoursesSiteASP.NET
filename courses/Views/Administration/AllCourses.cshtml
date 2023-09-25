@@ -11,6 +11,7 @@
             @* <th scope="col">Файл картинки</th> *@
             <th scope="col">Цена</th>
             <th scope="col">Категория</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +25,7 @@
                 @* <td>@item.Img</td> *@
                 <td>@item.Price</td>
                 <td>@item.Category.CategoryName</td>
+                <td><a asp-controller="Administration" asp-action="EditCourse" asp-route-id="@item.Id">Редактировать</a></td>
             </tr>
         }
     </tbody>
