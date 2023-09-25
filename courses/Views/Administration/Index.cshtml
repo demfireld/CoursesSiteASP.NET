@@ -3,7 +3,7 @@
 @if (User.IsInRole("admin"))
 {
     <H1>Админ</H1>
-    <a>Просмотр всех пользователей</a>
+    <a asp-controller="Administration" asp-action="AllUsers">Просмотр всех пользователей</a>
     
     <li>
         <H2>Курсы</H2>
