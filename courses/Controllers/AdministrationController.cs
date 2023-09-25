@@ -114,5 +114,37 @@ namespace courses.Controllers
             _coursesRepository.Update(course);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            IEnumerable<Categories> categories = await _categoriesRepository.GetAll();
+
+            Courses course = await _coursesRepository.GetByIdAsync(id);
+            if (course == null) { return View("Error"); }
+
+            EditCourseViewModel EditCourseViewModel = new EditCourseViewModel
+            {
+                Id=id,
+                Name = course.Name,
+                ShortDescription = course.ShortDescription,
+                LongDescription = course.LongDescription,
+                Img = course.Img,
+                Price = course.Price,
+                CategoryId = course.CategoryId,
+                Category = categories
+            };
+            return View(course);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteCourse(int id)
+        {
+            Courses courses = await _coursesRepository.GetByIdAsync(id);
+            if (courses == null) { return View("Error"); }
+
+            _coursesRepository.Delete(courses);
+            return RedirectToAction("AllCourses");
+        }
     }
 }
