@@ -13,6 +13,15 @@ namespace courses.Repository
         {
             _context = context;
         }
+        public async Task<IEnumerable<Courses>> GetAll()
+        {
+            return await _context.Courses.ToListAsync();
+        }
+
+        public async Task<Courses> GetByIdAsync(int id)
+        {
+            return await _context.Courses.FirstOrDefaultAsync(i => i.Id == id);
+        }
 
         public bool Add(Courses courses)
         {
@@ -25,16 +34,6 @@ namespace courses.Repository
             _context.Courses.Remove(courses);
             return Save();
         }
-
-        public async Task<IEnumerable<Courses>> GetAll()
-        {
-            return await _context.Courses.ToListAsync();
-        }
-
-        //public async Task<Courses> GetByIdAsync(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public bool Save()
         {

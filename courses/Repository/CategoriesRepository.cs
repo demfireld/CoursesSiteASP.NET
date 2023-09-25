@@ -14,6 +14,16 @@ namespace courses.Repository
             _context = context;
         }
 
+        public async Task<IEnumerable<Categories>> GetAll()
+        {
+            return await _context.Categories.ToListAsync();
+        }
+
+        //public async Task<Categories> GetByIdAsync(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         public bool Add(Categories categories)
         {
             _context.Categories.Add(categories);
@@ -25,16 +35,6 @@ namespace courses.Repository
             _context.Categories.Remove(categories);
             return Save();
         }
-
-        public async Task<IEnumerable<Categories>> GetAll()
-        {
-            return await _context.Categories.ToListAsync();
-        }
-
-        //public async Task<Categories> GetByIdAsync(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public bool Save()
         {
