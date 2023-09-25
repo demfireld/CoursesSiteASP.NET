@@ -4,19 +4,13 @@
 font-size: 50px
 }
 .button-main1 {
-    font-size: 15px
+font-size: 15px
 }
 .button-main2 {
-    font-size: 15px
-}
-.coach-span1 {
-    margin-right: 30%;
-}
-.coach-span3 {
-    margin-right: 10%;
+font-size: 15px
 }
 .course-text {
-    font-size: 40px;
+font-size: 20px;
 }
 }
 
@@ -31,13 +25,13 @@ font-size: 70px
 font-size: 70px
 }
 .button-main1 {
-    font-size: 23px
+font-size: 23px
 }
 .button-main2 {
-    font-size: 23px
+font-size: 23px
 }
 .course-text {
-    font-size: 50px;
+font-size: 30px;
 }
 }
 
@@ -46,13 +40,13 @@ font-size: 70px
 font-size: 100px
 }
 .button-main1 {
-    font-size: 23px
+font-size: 23px
 }
 .button-main2 {
-    font-size: 23px
+font-size: 23px
 }
 .course-text {
-    font-size: 70px;
+font-size: 50px;
 }
 }
 
@@ -61,14 +55,23 @@ font-size: 100px
 font-size: 128px
 }
 .button-main1 {
-    font-size: 23px
+font-size: 23px
 }
 .button-main2 {
-    font-size: 23px
+font-size: 23px
 }
 .course-text {
-    font-size: 70px;
+font-size: 50px;
 }
+}
+
+html, body {
+height: 100%;
+}
+
+body {
+display: flex;
+flex-direction: column;
 }
 
 
@@ -170,33 +173,10 @@ margin-bottom: 5%;
 .coach-section {
 padding-bottom: 5%;
 }
-.coach-h4 {
-padding: 30px 30px 30px;
-border: 2px solid rgb(114, 114, 114);
-}
-.coach-spans {
-flex-direction: column;
-align-items: end;
-}
-.coach-span1 {
-font-size: 60px;
-font-weight: 600;
-color: #66C05D;
-text-shadow: 0px 2px 4px black;
-}
-.coach-span2 {
-font-size: 40px;
-font-weight: 400;
-}
-.coach-span3 {
-font-size: 60px;
-font-weight: 600;
-color: #66C05D;
-text-shadow: 0px 2px 4px black;
-}
-.coach-span4 {
-font-size: 40px;
-font-weight: 400;
+.text-information {
+border: 2px solid black;
+padding: 10px;
+justify-content: space-evenly;
 }
 .photo-h2 {
 padding-bottom: 3%;
@@ -380,9 +360,45 @@ max-width: 100%;
 
 
 
+/* about_company--------------- */
+.cooperate {
+    flex-direction: column;
+}
+
+
+
+
+/* curses_table--------------- */
+.curses_table {
+display: flex;
+flex-direction: column;
+}
+th {
+font-size: 25px;
+}
+.solidarnost {
+width: 150px;
+height: 150px;
+}
+
 
 
 /* footer--------------- */
+footer {
+margin-top: auto;
+}
+.footer_ul {
+display: flex;
+flex-direction: column;
+}
 footer li{
-list-style-type: square;
+font-weight: 300;
+color: #ffffff;
+}
+footer li a {
+color: white;
+line-height: 40px;
+}
+footer li :hover{
+color: #909090;
 }
