@@ -1,0 +1,30 @@
+﻿@using courses.ViewModels;
+@model AllCoursesViewModel;
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Название</th>
+            <th scope="col">Короткое описание</th>
+            <th scope="col">Длинное описание</th>
+            @* <th scope="col">Файл картинки</th> *@
+            <th scope="col">Цена</th>
+            <th scope="col">Категория</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Courses)
+        {            
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.ShortDescription</td>
+                <td>@item.LongDescription</td>
+                @* <td>@item.Img</td> *@
+                <td>@item.Price</td>
+                <td>@item.Category.CategoryName</td>
+            </tr>
+        }
+    </tbody>
+</table>

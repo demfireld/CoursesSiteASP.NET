@@ -1,6 +1,7 @@
 ﻿using courses.Interfaces;
 using courses.Models;
 using courses.Repository;
+using courses.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -29,12 +30,17 @@ namespace courses.Controllers
         [Authorize(Roles = "admin")]
         public IActionResult AllUsers() => View(_userManager.Users.ToList());
 
-        //public async IActionResult AllCourses()
-        //{
-        //    IEnumerable<Courses> courses = await _coursesRepository.GetAll();
-        //    IEnumerable<Categories> categories = await _categoriesRepository.GetAll();
+        public async Task<IActionResult> AllCourses()
+        {
+            IEnumerable<Courses> courses = await _coursesRepository.GetAll();
+            IEnumerable<Categories> categories = await _categoriesRepository.GetAll();
 
+            AllCoursesViewModel allCoursesViewModel = new AllCoursesViewModel()
+            {
+                Courses = courses, Categories = categories
+            };
 
-        //}
+            return View(allCoursesViewModel);
+        }
     }
 }
