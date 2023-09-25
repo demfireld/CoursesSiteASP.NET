@@ -24,7 +24,7 @@ namespace courses.Controllers
             IEnumerable<Courses> courses = await _coursesRepository.GetAll();
             IEnumerable<Categories> categories = await _categoriesRepository.GetAll();
 
-            PriceViewModel priceViewModel = new PriceViewModel { Courses = courses, Categories = categories};
+            CoursesViewModel priceViewModel = new CoursesViewModel { Courses = courses, Categories = categories};
             return View(priceViewModel);
 
             //PriceViewModel priceViewModel = new PriceViewModel { Courses = _courses , Categories = _categories };
