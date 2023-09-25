@@ -1,0 +1,27 @@
+﻿@using courses.ViewModels;
+@model EditUserViewModel;
+
+<form asp-action="EditUser">
+    <div class="form-group">
+        <label asp-for="@Model.Name">Имя</label>
+        <input asp-for="@Model.Name" type="text" class="form-control" placeholder="Введите новое имя">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Surname">Фамилия</label>
+        <input asp-for="@Model.Surname" type="text" class="form-control" placeholder="Введите новую фамилию">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Patronymic">Отчество</label>
+        <input asp-for="@Model.Patronymic" type="text" class="form-control" placeholder="Введите новое отчество(необязательно)">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Email">Почта</label>
+        <input asp-for="@Model.Email" type="text" class="form-control" placeholder="Введите новую почту">
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.PhoneNumber">Номер телефона</label>
+        <input asp-for="@Model.PhoneNumber" type="text" class="form-control" placeholder="Введите новый номер телефона">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
