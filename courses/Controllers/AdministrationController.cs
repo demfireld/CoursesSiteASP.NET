@@ -60,21 +60,13 @@ namespace courses.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateCourse(CreateCoursesViewModel createCoursesViewModel)
+        public IActionResult CreateCourse(Courses courses)
         {
             if (ModelState.IsValid)
             {
-                Courses courses = new Courses()
-                {
-                    Name = createCoursesViewModel.Name,
-                    ShortDescription = createCoursesViewModel.ShortDescription,
-                    LongDescription = createCoursesViewModel.LongDescription,
-                    Img = createCoursesViewModel.Img,
-                    Price = createCoursesViewModel.Price,
-                    CategoryId = createCoursesViewModel.CategoryId
-                };
-                _coursesRepository.Add(courses);
+                return View(courses);
             }
+            _coursesRepository.Add(courses);
             return RedirectToAction("Index");
         }
     }
