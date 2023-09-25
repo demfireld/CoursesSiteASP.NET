@@ -40,7 +40,8 @@ namespace courses.Controllers
 
             AllCoursesViewModel allCoursesViewModel = new AllCoursesViewModel()
             {
-                Courses = courses, Categories = categories
+                Courses = courses,
+                Categories = categories
             };
 
             return View(allCoursesViewModel);
@@ -112,11 +113,12 @@ namespace courses.Controllers
                 CategoryId = editCourseViewModel.CategoryId,
             };
             _coursesRepository.Update(course);
-            return RedirectToAction("Index");
+            return RedirectToAction("AllCourses");
         }
 
+        [Authorize(Roles = "admin,courses editor")]
         [HttpGet]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteCourse(int id)
         {
             IEnumerable<Categories> categories = await _categoriesRepository.GetAll();
 
@@ -125,7 +127,7 @@ namespace courses.Controllers
 
             EditCourseViewModel EditCourseViewModel = new EditCourseViewModel
             {
-                Id=id,
+                Id = id,
                 Name = course.Name,
                 ShortDescription = course.ShortDescription,
                 LongDescription = course.LongDescription,
@@ -137,14 +139,96 @@ namespace courses.Controllers
             return View(course);
         }
 
-        [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> DeleteCourse(int id)
+        [Authorize(Roles = "admin")]
+        [HttpPost, ActionName("DeleteCourses")]
+        public async Task<IActionResult> DeleteCourses(int id)
         {
             Courses courses = await _coursesRepository.GetByIdAsync(id);
             if (courses == null) { return View("Error"); }
 
             _coursesRepository.Delete(courses);
             return RedirectToAction("AllCourses");
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpGet]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            AppUser user = await _userManager.FindByIdAsync(id);
+
+            if (user != null)
+            {
+                IdentityResult result = await _userManager.DeleteAsync(user);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("AllUsers");
+                }
+                else
+                {
+                    return View("Error", result.Errors);
+                }
+            }
+            else
+            {
+                return View("Error", new string[] { "Пользователь не найден"});
+            }
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpGet]
+        public async Task<IActionResult> EditUser(string id)
+        {
+            AppUser user = await _userManager.FindByIdAsync(id);
+            EditUserViewModel editUserViewModel = new EditUserViewModel()
+            {
+                Name = user.Name,
+                Surname = user.Surname,
+                Patronymic = user.Patronymic,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+            };
+
+            if (user != null) { return View(editUserViewModel); }
+            else { return RedirectToAction("AllUsers"); }
+
+        }
+
+        [HttpPost, ActionName("EditUser")]
+        public async Task<IActionResult> EditUser(string id, EditUserViewModel editUserViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                AppUser user = await _userManager.FindByIdAsync(id);
+
+                if (user != null)
+                {
+                    AppUser emailUser = await _userManager.FindByEmailAsync(editUserViewModel.Email);
+                    
+                    if (user.Email == editUserViewModel.Email || emailUser == null)
+                    {
+                        user.Name = editUserViewModel.Name;
+                        user.Surname = editUserViewModel.Surname;
+                        if (editUserViewModel.Patronymic != null)
+                        {
+                            user.Patronymic = editUserViewModel.Patronymic;
+                        }
+                        else
+                        {
+                            user.Patronymic = null;
+                        }
+                        user.UserName = editUserViewModel.Email;
+                        user.Email = editUserViewModel.Email;
+                        user.PhoneNumber = editUserViewModel.PhoneNumber;
+
+                        IdentityResult result = await _userManager.UpdateAsync(user);
+                        if (result.Succeeded) { return RedirectToAction("AllUsers"); }
+                        else { return View(editUserViewModel); }
+                    }
+                }
+                return RedirectToAction("AllUsers");
+            }
+            return View(editUserViewModel);
         }
     }
 }
