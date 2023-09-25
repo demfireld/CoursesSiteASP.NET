@@ -27,7 +27,7 @@
                 <td>@item.Price</td>
                 <td>@item.Category.CategoryName</td>
                 <td><a asp-controller="Administration" asp-action="EditCourse" asp-route-id="@item.Id">Редактировать</a></td>
-                <td><a asp-controller="Administration" asp-action="Delete" asp-route-id="@item.Id">Удалить</a></td>
+                <td><a asp-controller="Administration" asp-action="DeleteCourse" asp-route-id="@item.Id">Удалить</a></td>
             </tr>
         }
     </tbody>

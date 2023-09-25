@@ -10,6 +10,8 @@
             <th scope="col">Отчество</th>
             <th scope="col">Email</th>
             <th scope="col">Номер телефона</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +24,8 @@
                 <td>@item.Patronymic</td>
                 <td>@item.Email</td>
                 <td>@item.PhoneNumber</td>
+                <td><a asp-controller="Administration" asp-action="EditUser" asp-route-id="@item.Id">Редактировать</a></td>
+                <td><a asp-controller="Administration" asp-action="DeleteUser" asp-route-id="@item.Id">Удалить</a></td>
             </tr>
         }
     </tbody>
