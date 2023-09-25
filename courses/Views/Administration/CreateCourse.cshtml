@@ -1,0 +1,36 @@
+﻿@using courses.ViewModels;
+@model CreateCoursesViewModel;
+
+<form asp-action="CreateCourse">
+    <div class="form-group">
+        <label asp-for="Name">Название</label>
+        <input asp-for="Name" type="text" class="form-control" placeholder="Введите название курса">
+    </div>
+    <div class="form-group">
+        <label asp-for="ShortDescription">Короткое описание</label>
+        <input asp-for="ShortDescription" type=" text" class="form-control" placeholder="Введите короткое описание курса">
+    </div>
+    <div class="form-group">
+        <label asp-for="LongDescription">Длинное описание</label>
+        <textarea asp-for="LongDescription" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Img">Фотография</label>
+        <input asp-for="Img" type=" text" class="form-control" placeholder="Выберите фотографию">
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Цена</label>
+        <input asp-for="Price" type="number" step="0.10" class="form-control" placeholder="Введите цену курса">
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoryId">Категория</label>
+            <select asp-for=CategoryId class="form-control form-control-sm">
+            @foreach (var item in Model.Category)
+            {
+                <option value="@item.Id">@item.CategoryName</option>
+            }
+            </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
