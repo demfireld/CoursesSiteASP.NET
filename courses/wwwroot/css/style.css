@@ -1,7 +1,51 @@
 /* Медиазапросы */
+/* map */
+@media (max-width: 998px) {
+.footer {
+display: flex;
+flex-direction: column;
+justify-content: unset;
+}
+.map {
+display:flex;
+align-items: center;
+justify-content: center;
+}
+.map iframe {
+width: 100%;
+height: 400px;
+}
+}
+
+@media (max-width: 1280px) {
+.map iframe {
+border-radius: 18px;
+width: 560px;
+height: 316px;
+}
+}
+
+@media (max-width: 1480px) {
+.map iframe {
+border-radius: 18px;
+width: 712px;
+height: 416px;
+}
+}
+
+@media (min-width: 1481px) {
+.map iframe {
+border-radius: 18px;
+width: 712px;
+height: 416px;
+}
+}
+/* end-map */
+
+
 @media screen and (max-width: 575px) {
 .main-title {
-font-size: 50px
+font-size: 30px
 }
 .button-main1 {
 font-size: 15px
@@ -16,13 +60,13 @@ font-size: 20px;
 
 @media screen and (min-width: 575px) {
 .main-title {
-font-size: 70px
+font-size: 50px
 }
 }
 
 @media screen and (min-width: 767px) {
 .main-title {
-font-size: 70px
+font-size: 50px
 }
 .button-main1 {
 font-size: 23px
@@ -37,7 +81,7 @@ font-size: 30px;
 
 @media screen and (min-width: 998px) {
 .main-title {
-font-size: 100px
+font-size: 70px
 }
 .button-main1 {
 font-size: 23px
@@ -52,7 +96,7 @@ font-size: 50px;
 
 @media screen and (min-width: 1200px) {
 .main-title {
-font-size: 128px
+font-size: 80px
 }
 .button-main1 {
 font-size: 23px
@@ -64,6 +108,8 @@ font-size: 23px
 font-size: 50px;
 }
 }
+
+
 
 html, body {
 height: 100%;
@@ -93,6 +139,7 @@ background-position: center;
 }
 header {
 margin-bottom: 2%;
+font-family: 'Franklin Gothic Medium';
 }
 
 
@@ -103,7 +150,9 @@ margin-bottom: 2%;
 color: white;
 }
 .title-h2 {
+font-size: 20px;
 margin: auto;
+padding-right: 25%;
 }
 .title:hover {
 color:rgb(182, 182, 182);
@@ -131,7 +180,12 @@ font-size: 18px
 color:white;
 font-size: 18px
 }
-
+.login-button:hover {
+color:rgb(182, 182, 182);
+}
+.sign-button:hover {
+color:rgb(182, 182, 182); 
+}
 
 
 
