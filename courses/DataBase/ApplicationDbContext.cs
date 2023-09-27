@@ -14,6 +14,5 @@ namespace courses.DataBase
 
         public DbSet<Courses> Courses { get; set; }
         public DbSet<Categories> Categories { get; set; }
-        public DbSet<Staffs> Staffs { get; set; }
     }
 }

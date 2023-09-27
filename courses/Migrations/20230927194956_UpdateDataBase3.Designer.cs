@@ -12,8 +12,8 @@ using courses.DataBase;
 namespace courses.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230914084455_updateDataBase2")]
-    partial class updateDataBase2
+    [Migration("20230927194956_UpdateDataBase3")]
+    partial class UpdateDataBase3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -286,90 +286,6 @@ namespace courses.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Courses");
-                });
-
-            modelBuilder.Entity("courses.Models.Staffs", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("StaffAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StaffAge")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StaffImg")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StaffName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StaffPatronymic")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StaffPhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StaffSurname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StaffWorkExperience")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Staffs");
-                });
-
-            modelBuilder.Entity("courses.Models.Teachers", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("TeacherAddress")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TeacherAge")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TeacherImg")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TeacherName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TeacherPatronymic")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TeacherPhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TeacherSurname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TeacherWorkExperience")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Teachers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
