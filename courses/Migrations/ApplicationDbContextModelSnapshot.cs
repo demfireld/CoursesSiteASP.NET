@@ -245,7 +245,7 @@ namespace courses.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("courses.Models.Courses", b =>
@@ -282,7 +282,7 @@ namespace courses.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

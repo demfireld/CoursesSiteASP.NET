@@ -12,8 +12,8 @@ using courses.DataBase;
 namespace courses.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230927194956_UpdateDataBase3")]
-    partial class UpdateDataBase3
+    [Migration("20230927200709_FirstMigration")]
+    partial class FirstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
