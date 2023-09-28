@@ -4,10 +4,14 @@
 <!-- main -->
 <section class="main">
     <div class="container">
-        <div class="column">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                <h1 class="main-title">ОБЪЕДИНЕННЫЙ ЦЕНТР ПАТРИОТИЧЕСКОГО ВОСПИТАНИЯ!</h1>
-                <span class="main-span">«Каскад» (ОЦПВ «Каскад») был создан в 1982 году на базе Комсомольского военно-спортивного клуба «Орленок». </span>
+        <div class="main_information">
+            <div class="d-flex flex-column">
+                <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12">
+                    <h1 class="main-title">ОБЪЕДИНЕННЫЙ ЦЕНТР ПАТРИОТИЧЕСКОГО ВОСПИТАНИЯ!</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <span class="main-span">«Каскад» (ОЦПВ «Каскад») был создан в 1982 году на базе Комсомольского военно-спортивного клуба «Орленок». </span>
+                </div>
             </div>
             <div id="buttons-main" class="col-xl-12 col-lg-12 col-md-12 col-12">
                 <a class="button-main1" href="#">Записаться на обучение</a>
@@ -50,22 +54,49 @@
 </section>
 <!-- end-text-information -->
 <!-- photo-information     -->
-<section class="photo-slider">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2 class="photo-h2">Инструкторский состав</h2>
-            </div>
-            <div class="row">
-                <div class="col-lg-2 col-md-6 col-12">
-                    <img src="" alt="">
+<section class="photos-section">
+    <div class="container d-flex justify-content-center flex-column">
+        <div class="col-12 text-center">
+            <h2 class="photos-h2">Инструкторский состав</h2>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+            <div id="carouselWithCaptions" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselWithCaptions" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselWithCaptions" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselWithCaptions" data-bs-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../main bs 5.3.1/img/64.jpg" class="d-block w-100" alt="Slide 1">
+                        <div class="carousel-caption d-none d-sm-block">
+                            <h5>First slide label</h5>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../main bs 5.3.1/img/66.jpg" class="d-block w-100" alt="Slide 2">
+                        <div class="carousel-caption d-none d-sm-block">
+                            <h5>Second slide label</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../main bs 5.3.1/img/68.jpg" class="d-block w-100" alt="Slide 3">
+                        <div class="carousel-caption d-none d-sm-block">
+                            <h5>Third slide label</h5>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-2 col-md-6 col-12">
-                    <img src="" alt="">
-                </div>
-                <div class="col-lg-2 col-md-6 col-12">
-                    <img src="" alt="">
-                </div>
+                <a class="carousel-control-prev" href="#carouselWithCaptions" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselWithCaptions" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
             </div>
         </div>
     </div>
