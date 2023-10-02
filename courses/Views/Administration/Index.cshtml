@@ -3,22 +3,7 @@
 @if (User.IsInRole("admin"))
 {
     <H1>Админ</H1>
-    <a asp-controller="Administration" asp-action="AllUsers">Просмотр всех пользователей</a>
-    
-    <li>
-        <H2>Курсы</H2>
-        <a asp-controller="Administration" asp-action="AllCourses">Просмотр всех курсов</a>
-        <a asp-controller="Administration" asp-action="CreateCourse">Добавление курса</a>
-    </li>
-    
-    <li>
-        <H2>Новости</H2>
-        <a asp-controller="Administration" asp-action="AllNews">Просмотр всех новостей</a>
-        <a asp-controller="Administration" asp-action="CreateNews">Добавление новости</a>
-    </li>
-}
-
-@if (User.IsInRole("teacher"))
-{
-    
+    <H1><a asp-controller="Administration" asp-action="AllUsers">Просмотр всех пользователей</a></H1>
+    <H1><a asp-controller="Administration" asp-action="AllCourses">Курсы</a></H1>
+    <H1><a asp-controller="Administration" asp-action="AllNews">Новости</a></H1>
 }

@@ -157,7 +157,7 @@ namespace courses.Controllers
                 return View(courses);
             }
             _coursesRepository.Add(courses);
-            return RedirectToAction("Index");
+            return RedirectToAction("AllCourses");
         }
 
         [Authorize(Roles = "admin,courses editor")]
@@ -302,12 +302,12 @@ namespace courses.Controllers
         [HttpPost]
         public IActionResult CreateNews(News news)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(news);
             }
             _newsRepository.Add(news);
-            return RedirectToAction("Index");
+            return RedirectToAction("AllNews");
         }
         #endregion
     }
