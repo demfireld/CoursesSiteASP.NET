@@ -20,12 +20,12 @@
         {            
             <tr>
                 <td>@item.Id</td>
-                <td>@item.Name</td>
+                <td>@item.Title</td>
                 <td>@item.ShortDescription</td>
                 <td>@item.LongDescription</td>
                 @* <td>@item.Img</td> *@
                 <td>@item.Price</td>
-                <td>@item.Category.CategoryName</td>
+                <td>@item.Category.CategoryTitle</td>
                 <td><a asp-controller="Administration" asp-action="EditCourse" asp-route-id="@item.Id">Редактировать</a></td>
                 <td><a asp-controller="Administration" asp-action="DeleteCourse" asp-route-id="@item.Id">Удалить</a></td>
             </tr>

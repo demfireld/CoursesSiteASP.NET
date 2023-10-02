@@ -1,12 +1,12 @@
 ﻿@using courses.Models;
 @model Courses;
 
-<form asp-action="DeleteCourses" asp-route-id="" method="post">
+<form asp-action="DeleteCourse" asp-route-id="" method="post">
 
     <h1>Вы уверены, что хотите удалить данный курс?</h1>
     <div class="form-group">
-        <label asp-for="Name">Название</label>
-        <input readonly asp-for="Name" type="text" class="form-control" placeholder="Введите название курса">
+        <label asp-for="Title">Название</label>
+        <input readonly asp-for="Title" type="text" class="form-control" placeholder="Введите название курса">
     </div>
     <div class="form-group">
         <label asp-for="ShortDescription">Короткое описание</label>

@@ -1,5 +1,5 @@
 ﻿@using courses.ViewModels;
-@model CreateCoursesViewModel;
+@model CreateCourseViewModel;
 
 <form asp-action="CreateCourse">
     <div class="form-group">
@@ -33,7 +33,7 @@
             <select asp-for=CategoryId class="form-control form-control-sm">
                 @foreach (var item in Model.Category)
                 {
-                    <option value="@item.Id">@item.CategoryName</option>
+                    <option value="@item.Id">@item.CategoryTitle</option>
                 }
             </select>
         }
