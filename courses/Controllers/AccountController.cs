@@ -1,8 +1,12 @@
 ﻿using courses.DataBase;
 using courses.Models;
+using courses.Services;
 using courses.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
+using System.Net.Mail;
 
 namespace courses.Controllers
 {
@@ -63,6 +67,8 @@ namespace courses.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
             if (!ModelState.IsValid) return View(registerViewModel);
@@ -71,7 +77,7 @@ namespace courses.Controllers
 
             if (user != null)
             {
-                TempData["Error"] = "This email address is already in use";
+                TempData["Error"] = "Данная почта уже занята!";
                 return View(registerViewModel);
             }
 
@@ -89,13 +95,42 @@ namespace courses.Controllers
 
             if (newUserResponse.Succeeded)
             {
-                await _userManager.AddToRoleAsync(newUser, UserRoles.User);
-                return View("Login");
+                var code = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
+                var callbackUrl = Url.Action(
+                        "ConfirmEmail",
+                        "Account",
+                        new { userId = newUser.Id, code = code },
+                        protocol: HttpContext.Request.Scheme);
+                EmailService emailService = new EmailService();
+                await emailService.SendEmailAsync(registerViewModel.EmailAddress, "Подтвердите аккаунт",
+                    $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>link</a>");
+
+                return Content("Для завершения регистрации проверьте электронную почту и перейдите по ссылке, указанной в письме");
             }
 
             return View("Register");
         }
-        
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        {
+            if (userId == null || code == null)
+            {
+                return View("Error");
+            }
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return View("Error");
+            }
+            var result = await _userManager.ConfirmEmailAsync(user, code);
+            if (result.Succeeded)
+                return RedirectToAction("Index", "Home");
+            else
+                return View("Error");
+        }
+
         [HttpGet]
         public async Task<IActionResult> Logout()
         {
