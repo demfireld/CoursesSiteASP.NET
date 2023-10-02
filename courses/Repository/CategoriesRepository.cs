@@ -14,7 +14,7 @@ namespace courses.Repository
             _context = context;
         }
 
-        public async Task<IEnumerable<Categories>> GetAll()
+        public async Task<IEnumerable<Categories>> GetAllAsync()
         {
             return await _context.Categories.ToListAsync();
         }

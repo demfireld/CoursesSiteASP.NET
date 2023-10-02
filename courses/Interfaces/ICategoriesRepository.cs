@@ -4,7 +4,7 @@ namespace courses.Interfaces
 {
     public interface ICategoriesRepository
     {
-        Task<IEnumerable<Categories>> GetAll();
+        Task<IEnumerable<Categories>> GetAllAsync();
        // Task<Categories> GetByIdAsync(int id);
 
         bool Add(Categories categories);
