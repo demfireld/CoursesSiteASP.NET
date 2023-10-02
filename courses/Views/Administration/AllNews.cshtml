@@ -1,0 +1,24 @@
+﻿@using courses.ViewModels;
+@model AllNewsViewModel;
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Название</th>
+            <th scope="col">Описание</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.News)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td><a asp-controller="Administration" asp-action="EditNews" asp-route-id="@item.Id">Редактировать</a></td>
+                <td><a asp-controller="Administration" asp-action="DeleteNews" asp-route-id="@item.Id">Удалить</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
