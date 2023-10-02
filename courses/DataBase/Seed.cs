@@ -20,19 +20,19 @@ namespace courses.DataBase
                     {
                         new Categories()
                         {
-                            CategoryName = "Зимние"
+                            CategoryTitle = "Зимние"
                         },
                         new Categories()
                         {
-                            CategoryName = "Весенние"
+                            CategoryTitle = "Весенние"
                         },
                         new Categories()
                         {
-                            CategoryName = "Летние"
+                            CategoryTitle = "Летние"
                         },
                         new Categories()
                         {
-                            CategoryName = "Осенние"
+                            CategoryTitle = "Осенние"
                         }
                     });
                     context.SaveChanges();
@@ -44,7 +44,7 @@ namespace courses.DataBase
                     {
                         new Courses()
                         {
-                            Name = "Молодой боец",
+                            Title = "Молодой боец",
                             ShortDescription = "Короткое описание",
                             LongDescription = "Длинное описание",
                             Img = "путь до картинки",
@@ -54,12 +54,25 @@ namespace courses.DataBase
 
                         new Courses()
                         {
-                            Name = "Зимний летчик",
+                            Title = "Зимний летчик",
                             ShortDescription = "Короткое описание",
                             LongDescription = "Длинное описание",
                             Img = "путь до картинки",
                             Price = 342.99,
                             CategoryId = 1
+                        }
+                    });
+                    context.SaveChanges();
+                }
+
+                if (!context.News.Any())
+                {
+                    context.News.AddRange(new List<News>()
+                    {
+                        new News()
+                        {
+                            Title = "Тестовая новвость",
+                            Description = "Тестовое новостное описание"
                         }
                     });
                     context.SaveChanges();
