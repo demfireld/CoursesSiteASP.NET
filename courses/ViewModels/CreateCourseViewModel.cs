@@ -2,7 +2,7 @@
 
 namespace courses.ViewModels
 {
-    public class CreateCoursesViewModel
+    public class CreateCourseViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
