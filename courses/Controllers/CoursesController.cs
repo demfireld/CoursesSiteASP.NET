@@ -21,8 +21,8 @@ namespace courses.Controllers
 
         public async Task<IActionResult> Index()
         {
-            IEnumerable<Courses> courses = await _coursesRepository.GetAll();
-            IEnumerable<Categories> categories = await _categoriesRepository.GetAll();
+            IEnumerable<Courses> courses = await _coursesRepository.GetAllAsync();
+            IEnumerable<Categories> categories = await _categoriesRepository.GetAllAsync();
 
             CoursesViewModel priceViewModel = new CoursesViewModel { Courses = courses, Categories = categories};
             return View(priceViewModel);
