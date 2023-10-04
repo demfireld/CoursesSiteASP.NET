@@ -105,7 +105,7 @@ namespace courses.Controllers
                 await emailService.SendEmailAsync(registerViewModel.EmailAddress, "Подтвердите аккаунт",
                     $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>link</a>");
             }
-            return View("Register");
+            return RedirectToAction("Login");
         }
 
         [HttpGet]
