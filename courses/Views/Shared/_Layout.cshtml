@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject UserManager<AppUser> UserManager
+@inject UserManager<AppUser> userManager
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +45,7 @@
 
                     <div class="col-xl-3 col-lg-3 col-md-6 col-6 d-none d-lg-block">
                         <div class="nav-connect">
-                            <a class="account-button" asp-controller="DetailUser" asp-action="Detail" asp-route-id="@UserManager.GetUserAsync(User)">
+                            <a class="account-button" asp-controller="ProfileUser" asp-action="Index" asp-route-id="@userManager.GetUserId(User)">
                                 <i class="fa-regular fa-user" style="color: #ffffff;"></i>
                             </a>
                             <a class="login-button" asp-controller="Account" asp-action="Logout">Выход</a>

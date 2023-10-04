@@ -34,7 +34,7 @@ namespace courses.Controllers
         {
             AppUser user = await _userManager.FindByNameAsync(Id);
 
-            DetailUserViewModel detailUserViewModel = new DetailUserViewModel()
+            ProfileUserViewModel detailUserViewModel = new ProfileUserViewModel()
             {
                 Id = Id,
                 Name = user.Name,

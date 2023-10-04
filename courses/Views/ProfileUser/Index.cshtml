@@ -1,4 +1,4 @@
-﻿@model courses.ViewModels.DetailUserViewModel;
+﻿@model courses.ViewModels.ProfileUserViewModel
 
 <!-- main -->
 <section class="main">
@@ -7,14 +7,12 @@
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <div class="row">
                     <div class="photo_section d-flex justify-content-center">
-                        <img src="./img/user-solid.svg" alt="">
+                        <img src="../main bs 5.3.1/img/user-solid.svg" alt="">
                     </div>
                     <div class="label_section">
                         <div class="nav flex-column">
+                            <p>Здравствуйте, @Model.Surname @Model.Name @Model.Patronymic!</p>
                             <ul class="login_section">
-                                <li class="nav-item">
-                                    <p>@Model.Name</p>
-                                </li>
                                 <li class="nav-item">
                                     <a href="" class="nav-link text-dark"><i class="fa-solid fa-book"></i> Записанные курсы</a>
                                 </li>
@@ -22,7 +20,7 @@
                                     <a href="" class="nav-link text-dark"><i class="fa-solid fa-pen-to-square"></i> Редактировать</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link text-dark"><i class="fa-solid fa-person-running"></i> Выход</a>
+                                    <a asp-controller="Account" asp-action="Logout" class="nav-link text-dark"><i class="fa-solid fa-person-running"></i> Выход</a>
                                 </li>
                             </ul>
                         </div>
