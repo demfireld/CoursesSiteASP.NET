@@ -12,7 +12,6 @@ namespace courses.ViewModels
         [Display(Name = "User surname")]
         public string Surname { get; set; }
 
-        [Required]
         [Display(Name = "User patronymic")]
         public string? Patronymic { get; set; }
 
