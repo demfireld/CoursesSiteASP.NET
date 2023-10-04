@@ -1,7 +1,6 @@
 ﻿using courses.Interfaces;
 using courses.Models;
 using courses.ViewModels;
-using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -44,7 +43,7 @@ namespace courses.Controllers
         public IActionResult AllUsers() => View(_userManager.Users.ToList());
         
         [Authorize(Roles = "admin")]
-        [HttpPost, ActionName("DeleteUser")]
+        [HttpGet, ActionName("DeleteUser")]
         public async Task<IActionResult> DeleteUser(string id)
         {
             AppUser user = await _userManager.FindByIdAsync(id);
@@ -128,10 +127,10 @@ namespace courses.Controllers
 
         [Authorize(Roles = "admin")]
         [HttpGet]
-        public async Task<IActionResult> EditRole(string userId)
+        public async Task<IActionResult> EditRole(string Id)
         {
             // получаем пользователя
-            AppUser user = await _userManager.FindByIdAsync(userId);
+            AppUser user = await _userManager.FindByIdAsync(Id);
             if (user != null)
             {
                 // получем список ролей пользователя
@@ -139,8 +138,8 @@ namespace courses.Controllers
                 var allRoles = _roleManager.Roles.ToList();
                 ChangeRoleViewModel model = new ChangeRoleViewModel
                 {
-                    UserId = user.Id,
-                    UserEmail = user.Email,
+                    Id = user.Id,
+                    Email = user.Email,
                     UserRoles = userRoles,
                     AllRoles = allRoles
                 };
@@ -155,7 +154,7 @@ namespace courses.Controllers
         public async Task<IActionResult> EditRole(string userId, List<string> roles)
         {
             // получаем пользователя
-            User user = await _userManager.FindByIdAsync(userId);
+            AppUser user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
                 // получем список ролей пользователя
@@ -171,7 +170,7 @@ namespace courses.Controllers
 
                 await _userManager.RemoveFromRolesAsync(user, removedRoles);
 
-                return RedirectToAction("UserList");
+                return RedirectToAction("AllUsers");
             }
 
             return NotFound();
