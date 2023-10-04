@@ -69,6 +69,14 @@
     .img_about2 img {
         width: 80%;
     }
+
+    .photos_company img {
+        margin-bottom: 3%;
+    }
+
+    .textarea__reviews {
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 575px) {
@@ -82,6 +90,10 @@
 
     .img_about2 img {
         width: 80%;
+    }
+
+    .photos_company img {
+        margin-bottom: 3%;
     }
 }
 
@@ -108,6 +120,10 @@
 
     .img_about2 img {
         width: 80%;
+    }
+
+    .photos_company img {
+        margin-bottom: 3%;
     }
 }
 
@@ -256,6 +272,7 @@ header {
 
 
 
+
 /* main--------------- */
 .main-title {
     font-weight: 900;
@@ -290,7 +307,6 @@ header {
 
 .course-description {
     margin-top: 5%;
-    margin-bottom: 5%;
 }
 
 .course-text {
@@ -319,6 +335,11 @@ header {
 .carousel {
     max-width: 80%;
 }
+
+.carousel-indicators li {
+    list-style-type: none;
+}
+
 
 
 
@@ -433,84 +454,14 @@ header {
 
 
 /* reviews */
-.koguvcavis-varazdel {
-    padding: 38px 0;
-    background: #adadad;
-    color: #2f2f2f;
-    text-align: center;
+.button__reviews {
+    margin-bottom: 4%;
 }
 
-.sestim-donials {
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 20px;
-}
-
-.sectionesag {
-    width: 195px;
-    height: 3px;
-    background: #498a2d;
-    margin: 23px auto;
-}
-
-.sagestim-lonials {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.vemotau-vokusipol {
-    flex: 33.33%;
-    max-width: 33.33%;
-    box-sizing: border-box;
-    padding: 15px;
-}
-
-.testimonial {
-    background: #f9f4f4;
-    padding: 28px;
-}
-
-    .testimonial img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-    }
-
-.gecedanam {
-    font-size: 20px;
-    text-transform: uppercase;
-    margin: 20px 0;
-    background-color: #f9f4f4;
-}
-
-.apogered-gselected {
-    color: #53b32b;
-    margin-bottom: 20px;
-    background-color: #f9f4f4;
-}
-
-.reviews_comment {
-    background-color: #f9f4f4;
-}
-
-.far, .fas {
-    background-color: #f9f4f4;
-}
-
-@media screen and (max-width:960px) {
-    .vemotau-vokusipol {
-        flex: 100%;
-        max-width: 80%;
-    }
-}
-
-@media screen and (max-width:600px) {
-    .vemotau-vokusipol {
-        flex: 100%;
-        max-width: 100%;
-    }
+.textarea__reviews {
+    border-radius: 10px;
+    border-color: #6c757d;
+    padding: 2%
 }
 
 
@@ -525,6 +476,7 @@ header {
 
 .cooperate {
     flex-direction: column;
+    margin-bottom: 5%;
 }
 
 
@@ -544,6 +496,50 @@ th {
     width: 150px;
     height: 150px;
 }
+
+
+
+
+/* news */
+.news {
+    margin-top: 5%;
+}
+
+.news-main-text h1 {
+    font-family: 'Oswald Light';
+    font-weight: 550;
+    margin-bottom: 2%;
+}
+
+.news_ribbon {
+    margin-bottom: 5%;
+}
+
+
+
+/* login */
+.photo_section img {
+    max-width: 50%;
+    margin-top: 5%;
+}
+
+.login_section li {
+    list-style-type: none;
+}
+
+.login_section {
+    margin-top: 2%;
+    border-radius: 20px;
+}
+
+    .login_section li a:hover {
+        color: rgb(182, 182, 182);
+    }
+
+.label_section {
+    margin-top: 3%;
+}
+
 
 
 
