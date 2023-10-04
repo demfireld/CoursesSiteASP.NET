@@ -1,193 +1,165 @@
 /* Медиазапросы */
 /* map */
 @media (max-width: 998px) {
-    .footer {
-        display: flex;
-        flex-direction: column;
-        justify-content: unset;
-    }
-
-    .map {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-        .map iframe {
-            width: 100%;
-            height: 400px;
-        }
+.footer {
+display: flex;
+flex-direction: column;
+justify-content: unset;
+}
+.map {
+display:flex;
+align-items: center;
+justify-content: center;
+}
+.map iframe {
+width: 100%;
+height: 400px;
+}
 }
 
 @media (max-width: 1280px) {
-    .map iframe {
-        border-radius: 18px;
-        width: 560px;
-        height: 316px;
-    }
+.map iframe {
+border-radius: 18px;
+width: 560px;
+height: 316px;
+}
 }
 
 @media (max-width: 1480px) {
-    .map iframe {
-        border-radius: 18px;
-        width: 712px;
-        height: 416px;
-    }
+.map iframe {
+border-radius: 18px;
+width: 712px;
+height: 416px;
+}
 }
 
 @media (min-width: 1481px) {
-    .map iframe {
-        border-radius: 18px;
-        width: 712px;
-        height: 416px;
-    }
+.map iframe {
+border-radius: 18px;
+width: 712px;
+height: 416px;
+}
 }
 /* end-map */
 
 
 @media screen and (max-width: 575px) {
-    .main-title {
-        font-size: 30px
-    }
-
-    .button-main1 {
-        font-size: 15px
-    }
-
-    .button-main2 {
-        font-size: 15px
-    }
-
-    .course-text {
-        font-size: 20px;
-    }
-
-    .img_about1 img {
-        width: 80%;
-    }
-
-    .img_about2 img {
-        width: 80%;
-    }
-
-    .photos_company img {
-        margin-bottom: 3%;
-    }
-
-    .textarea__reviews {
-        width: 100%;
-    }
+.main-title {
+font-size: 30px
+}
+.button-main1 {
+font-size: 15px
+}
+.button-main2 {
+font-size: 15px
+}
+.course-text {
+font-size: 20px;
+}
+.img_about1 img{
+width: 80%;
+}
+.img_about2 img{
+width: 80%;
+}
+.photos_company img {
+margin-bottom: 3%;
+}
+.textarea__reviews {
+width: 100%;
+}
 }
 
 @media screen and (min-width: 575px) {
-    .main-title {
-        font-size: 50px
-    }
-
-    .img_about1 img {
-        width: 80%;
-    }
-
-    .img_about2 img {
-        width: 80%;
-    }
-
-    .photos_company img {
-        margin-bottom: 3%;
-    }
+.main-title {
+font-size: 50px
+}
+.img_about1 img{
+width: 80%;
+}
+.img_about2 img{
+width: 80%;
+}
+.photos_company img {
+margin-bottom: 3%;
+}
 }
 
 @media screen and (min-width: 767px) {
-    .main-title {
-        font-size: 50px
-    }
-
-    .button-main1 {
-        font-size: 23px
-    }
-
-    .button-main2 {
-        font-size: 23px
-    }
-
-    .course-text {
-        font-size: 30px;
-    }
-
-    .img_about1 img {
-        width: 80%;
-    }
-
-    .img_about2 img {
-        width: 80%;
-    }
-
-    .photos_company img {
-        margin-bottom: 3%;
-    }
+.main-title {
+font-size: 50px
+}
+.button-main1 {
+font-size: 23px
+}
+.button-main2 {
+font-size: 23px
+}
+.course-text {
+font-size: 30px;
+}
+.img_about1 img{
+width: 80%;
+}
+.img_about2 img{
+width: 80%;
+}
+.photos_company img {
+margin-bottom: 3%;
+}
 }
 
 @media screen and (min-width: 998px) {
-    .main-title {
-        font-size: 50px
-    }
-
-    .button-main1 {
-        font-size: 23px
-    }
-
-    .button-main2 {
-        font-size: 23px
-    }
-
-    .course-text {
-        font-size: 50px;
-    }
-
-    .img_about1 img {
-        width: 80%;
-    }
-
-    .img_about2 img {
-        width: 80%;
-    }
+.main-title {
+font-size: 50px
+}
+.button-main1 {
+font-size: 23px
+}
+.button-main2 {
+font-size: 23px
+}
+.course-text {
+font-size: 50px;
+}
+.img_about1 img{
+width: 80%;
+}
+.img_about2 img{
+width: 80%;
+}
 }
 
 @media screen and (min-width: 1200px) {
-    .main-title {
-        font-size: 60px;
-    }
-
-    .button-main1 {
-        font-size: 23px
-    }
-
-    .button-main2 {
-        font-size: 23px
-    }
-
-    .course-text {
-        font-size: 50px;
-    }
-
-    .img_about1 img {
-        width: 80%;
-    }
-
-    .img_about2 img {
-        width: 80%;
-    }
+.main-title {
+font-size: 60px;
+}
+.button-main1 {
+font-size: 23px
+}
+.button-main2 {
+font-size: 23px
+}
+.course-text {
+font-size: 50px;
+}
+.img_about1 img{
+width: 80%;
+}
+.img_about2 img{
+width: 80%;
+}
 }
 
 
 
 html, body {
-    height: 100%;
+height: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 
 
@@ -195,24 +167,21 @@ body {
 
 /* basic */
 a {
-    text-decoration: none;
+text-decoration: none;
 }
-
 *, body, html {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
 }
-
 html {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
 }
-
 header {
-    margin-bottom: 2%;
-    font-family: 'Franklin Gothic Medium';
+margin-bottom: 2%;
+font-family: 'Franklin Gothic Medium';
 }
 
 
@@ -220,54 +189,47 @@ header {
 
 /* header--------------- */
 .title {
-    color: white;
+color: white;
 }
-
 .title-h2 {
-    font-size: 20px;
-    margin: auto;
-    padding-right: 25%;
+font-size: 20px;
+margin: auto;
+padding-right: 25%;
 }
-
 .title:hover {
-    color: rgb(182, 182, 182);
+color:rgb(182, 182, 182);
 }
-
 .nav {
-    justify-content: center;
-    font-size: 18px;
+justify-content: center;
+font-size: 18px;
 }
-
 .nav-link {
-    color: white
+color: white
 }
-
-    .nav-link:hover {
-        color: rgb(182, 182, 182);
-    }
-
+.nav-link:hover {
+color:rgb(182, 182, 182);
+}
 .nav-connect {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
 }
-
 .login-button {
-    color: white;
-    font-size: 18px
+color: white;
+font-size: 18px
 }
-
 .sign-button {
-    color: white;
-    font-size: 18px
+color:white;
+font-size: 18px
 }
-
 .login-button:hover {
-    color: rgb(182, 182, 182);
+color:rgb(182, 182, 182);
 }
-
 .sign-button:hover {
-    color: rgb(182, 182, 182);
+color:rgb(182, 182, 182); 
+}
+.account-button {
+color: white
 }
 
 
@@ -275,68 +237,56 @@ header {
 
 /* main--------------- */
 .main-title {
-    font-weight: 900;
+font-weight: 900;
 }
-
 #buttons-main {
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-around;
+margin-top: 5%;
+display: flex;
+justify-content: space-around;
 }
-
 .main-span {
-    font-size: 30px;
-    font-family: 'Oswald-Light';
-    font-weight: 550;
+font-size: 30px;
+font-family: 'Oswald-Light';
+font-weight: 550;
 }
-
 .button-main1 {
-    color: black;
-    border: 2px solid #66C05D;
-    background-color: #66C05D;
-    border-radius: 15px;
-    padding: 10px 10px 10px;
+color: black;
+border: 2px solid #66C05D;
+background-color: #66C05D;
+border-radius: 15px;
+padding: 10px 10px 10px;
 }
-
 .button-main2 {
-    color: black;
-    border: 2px solid black;
-    border-radius: 15px;
-    padding: 10px 10px 10px;
+color: black;
+border: 2px solid black;
+border-radius: 15px;
+padding: 10px 10px 10px;
 }
-
 .course-description {
-    margin-top: 5%;
+margin-top: 5%;
 }
-
 .course-text {
-    font-family: 'Georgia';
-    margin-bottom: 5%;
+font-family: 'Georgia';
+margin-bottom: 5%;
 }
-
 .coach-section {
-    padding-bottom: 5%;
+padding-bottom: 5%;
 }
-
 .text-information {
-    padding: 10px;
-    justify-content: space-evenly;
+padding: 10px;
+justify-content: space-evenly;
 }
-
 .photos-h2 {
-    padding-bottom: 3%;
+padding-bottom: 3%;
 }
-
 .photos-section {
-    padding-bottom: 5%;
+padding-bottom: 5%;
 }
-
 .carousel {
-    max-width: 80%;
+max-width: 80%;
 }
-
 .carousel-indicators li {
-    list-style-type: none;
+list-style-type: none;
 }
 
 
@@ -344,109 +294,99 @@ header {
 
 /* login-form */
 .ui-form {
-    width: 350px;
-    padding: 80px 30px 30px;
-    margin: 50px auto 30px;
-    background: white;
-    border: 2px solid black;
+width: 350px;
+padding: 80px 30px 30px;
+margin: 50px auto 30px;
+background: white;
+border: 2px solid black;
 }
-
-    .ui-form h3 {
-        position: relative;
-        z-index: 5;
-        margin: 0 0 60px;
-        text-align: center;
-        color: #4a90e2;
-        font-size: 30px;
-        font-weight: normal;
-        background-color: white;
-    }
-
-        .ui-form h3:before {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            left: 60px;
-            top: -30px;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: #fee8e4;
-        }
-
-        .ui-form h3:after {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            right: 50px;
-            top: -40px;
-            width: 0;
-            height: 0;
-            border-left: 55px solid transparent;
-            border-right: 55px solid transparent;
-            border-bottom: 90px solid #ffe3b5;
-        }
-
+.ui-form h3 {
+position: relative;
+z-index: 5;
+margin: 0 0 60px;
+text-align: center;
+color: #4a90e2;
+font-size: 30px;
+font-weight: normal;
+background-color: white;
+}
+.ui-form h3:before {
+content: "";
+position: absolute;
+z-index: -1;
+left: 60px;
+top: -30px;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background: #fee8e4;
+}
+.ui-form h3:after {
+content: "";
+position: absolute;
+z-index: -1;
+right: 50px;
+top: -40px;
+width: 0;
+height: 0;
+border-left: 55px solid transparent;
+border-right: 55px solid transparent;
+border-bottom: 90px solid #ffe3b5;
+}
 .form-row {
-    position: relative;
-    margin-bottom: 40px;
-    background-color: white;
-    caret-color: black;
+position: relative;
+margin-bottom: 40px;
+background-color: white;
+caret-color: black;
 }
-
-    .form-row input {
-        display: block;
-        width: 100%;
-        padding: 0 10px;
-        line-height: 40px;
-        font-family: 'Roboto', sans-serif;
-        background: none;
-        border-width: 0;
-        border-bottom: 2px solid #4a90e2;
-        transition: all 0.2s ease;
-    }
-
-    .form-row label {
-        position: absolute;
-        left: 13px;
-        color: #9d959d;
-        font-size: 20px;
-        font-weight: 300;
-        transform: translateY(-35px);
-        transition: all 0.2s ease;
-        background-color: white;
-    }
-
-    .form-row input:focus {
-        outline: 0;
-        border-color: #F77A52;
-    }
-
-        .form-row input:focus + label, .form-row input:valid + label {
-            transform: translateY(-60px);
-            margin-left: -14px;
-            font-size: 14px;
-            font-weight: 400;
-            outline: 0;
-            border-color: #F77A52;
-            color: #F77A52;
-        }
-
+.form-row input {
+display: block;
+width: 100%;
+padding: 0 10px;
+line-height: 40px;
+font-family: 'Roboto', sans-serif;
+background: none;
+border-width: 0;
+border-bottom: 2px solid #4a90e2;
+transition: all 0.2s ease;
+}
+.form-row label {
+position: absolute;
+left: 13px;
+color: #9d959d;
+font-size: 20px;
+font-weight: 300;
+transform: translateY(-35px);
+transition: all 0.2s ease;
+background-color: white;
+}
+.form-row input:focus {
+outline: 0;
+border-color: #F77A52;
+}
+.form-row input:focus+label, .form-row input:valid+label {
+transform: translateY(-60px);
+margin-left: -14px;
+font-size: 14px;
+font-weight: 400;
+outline: 0;
+border-color: #F77A52;
+color: #F77A52;
+}
 .ui-form input[type="submit"] {
-    width: 100%;
-    padding: 0;
-    line-height: 42px;
-    background: #4a90e2;
-    border-width: 0;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+width: 100%;
+padding: 0;
+line-height: 42px;
+background: #4a90e2;
+border-width: 0;
+color: white;
+font-size: 20px;
+cursor: pointer;
 }
-
 .ui-form p {
-    margin: 0;
-    padding-top: 10px;
-    background-color: white;
+margin: 0;
+padding-top: 10px;
+background-color: white;
 }
 
 
@@ -454,13 +394,12 @@ header {
 
 /* reviews */
 .button__reviews {
-    margin-bottom: 4%;
+margin-bottom: 4%;
 }
-
 .textarea__reviews {
-    border-radius: 10px;
-    border-color: #6c757d;
-    padding: 2%
+border-radius: 10px;
+border-color: #6c757d;
+padding: 2%
 }
 
 
@@ -468,14 +407,13 @@ header {
 
 /* about_company--------------- */
 .photos_company {
-    margin-top: 2%;
-    margin-bottom: 3%;
-    justify-content: center;
+margin-top: 2%;
+margin-bottom: 3%;
+justify-content: center;
 }
-
 .cooperate {
-    flex-direction: column;
-    margin-bottom: 5%;
+flex-direction: column;
+margin-bottom: 5%;
 }
 
 
@@ -483,17 +421,15 @@ header {
 
 /* curses_table--------------- */
 .curses_table {
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
-
 th {
-    font-size: 25px;
+font-size: 25px;
 }
-
 .solidarnost {
-    width: 150px;
-    height: 150px;
+width: 150px;
+height: 150px;
 }
 
 
@@ -501,42 +437,36 @@ th {
 
 /* news */
 .news {
-    margin-top: 5%;
+margin-top: 5%;
 }
-
-.news-main-text h1 {
-    font-family: 'Oswald Light';
-    font-weight: 550;
-    margin-bottom: 2%;
+.news-main-text h1{
+font-family: 'Oswald Light';
+font-weight: 550;
+margin-bottom: 2%;
 }
-
 .news_ribbon {
-    margin-bottom: 5%;
+margin-bottom: 5%;
 }
 
 
 
 /* login */
-.photo_section img {
-    max-width: 50%;
-    margin-top: 5%;
+.photo_section img{
+max-width: 50%;
+margin-top: 5%;
 }
-
-.login_section li {
-    list-style-type: none;
+.login_section li{
+list-style-type: none;
 }
-
 .login_section {
-    margin-top: 2%;
-    border-radius: 20px;
+margin-top: 2%;
+border-radius: 20px;
 }
-
-    .login_section li a:hover {
-        color: rgb(182, 182, 182);
-    }
-
+.login_section li a:hover {
+color:rgb(182, 182, 182);
+}
 .label_section {
-    margin-top: 3%;
+margin-top: 3%;
 }
 
 
@@ -544,24 +474,20 @@ th {
 
 /* footer--------------- */
 footer {
-    margin-top: auto;
+margin-top: auto;
 }
-
 .footer_ul {
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }
-
-footer li {
-    font-weight: 300;
-    color: #ffffff;
+footer li{
+font-weight: 300;
+color: #ffffff;
 }
-
-    footer li a {
-        color: white;
-        line-height: 40px;
-    }
-
-    footer li :hover {
-        color: #909090;
-    }
+footer li a {
+color: white;
+line-height: 40px;
+}
+footer li :hover{
+color: #909090;
+}
