@@ -4,22 +4,22 @@
 <section class="main">
     <div class="container">
         @foreach (var item in Model.News)
-        {
-            <div class="news_ribbon">
-                <div class="card col-12">
-                    <div class="row g-0">
-                        <div class="col-5 col-sm-4">
-                            <img src="./img/70.jpg" class="img-fluid w-100" alt="card-horizontal-image">
-                        </div>
-                        <div class="col-7 col-sm-8">
-                            <div class="card-body">
-                                <h5 class="card-title">@item.Title</h5>
-                                <p class="card-text">@item.Description</p>
-                            </div>
+        {   
+        <div class="news_ribbon">
+            <div class="card col-12">
+                <div class="row g-0">
+                    <div class="col-5 col-sm-4">
+                        <img src="../main bs 5.3.1/img/70.jpg" class="img-fluid w-100" alt="card-horizontal-image">
+                    </div>
+                    <div class="col-7 col-sm-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@item.Description</p>
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
+        </div>
         }
     </div>
 </section>
