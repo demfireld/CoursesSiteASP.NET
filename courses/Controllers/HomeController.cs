@@ -1,6 +1,6 @@
-﻿using courses.DataBase;
-using courses.Models;
+﻿using courses.Models;
 using courses.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -10,10 +10,12 @@ namespace courses.Controllers
     {
         private readonly List<Courses> _courses;
         private readonly ILogger<HomeController> _logger;
+        private readonly UserManager<AppUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, UserManager<AppUser> userManager)
         {
             _logger = logger;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
@@ -26,6 +28,23 @@ namespace courses.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IActionResult> Detail(string Id)
+        {
+            AppUser user = await _userManager.FindByNameAsync(Id);
+
+            DetailUserViewModel detailUserViewModel = new DetailUserViewModel()
+            {
+                Id = Id,
+                Name = user.Name,
+                Surname = user.Surname,
+                Patronymic = user.Patronymic,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber
+            };
+
+            return View(detailUserViewModel);
         }
     }
 }
