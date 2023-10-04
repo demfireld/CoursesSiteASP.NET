@@ -84,7 +84,6 @@ namespace courses.Controllers
 
             if (user != null) { return View(editUserViewModel); }
             else { return RedirectToAction("AllUsers"); }
-
         }
 
         [Authorize(Roles = "admin")]
