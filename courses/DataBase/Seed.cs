@@ -87,10 +87,17 @@ namespace courses.DataBase
                 //Roles
                 var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
 
-                if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
-                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
                 if (!await roleManager.RoleExistsAsync(UserRoles.User))
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.User));
+                if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                if (!await roleManager.RoleExistsAsync(UserRoles.Teacher))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Teacher));
+                if (!await roleManager.RoleExistsAsync(UserRoles.NewsEditor))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.NewsEditor));
+                if (!await roleManager.RoleExistsAsync(UserRoles.CoursesEditor))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.CoursesEditor));
+
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
