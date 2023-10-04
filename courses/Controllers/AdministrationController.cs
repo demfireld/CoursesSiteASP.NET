@@ -1,11 +1,10 @@
-﻿using courses.DataBase;
-using courses.Interfaces;
+﻿using courses.Interfaces;
 using courses.Models;
-using courses.Repository;
 using courses.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace courses.Controllers
 {
@@ -15,13 +14,21 @@ namespace courses.Controllers
         private readonly ICoursesRepository _coursesRepository;
         private readonly ICategoriesRepository _categoriesRepository;
         private readonly INewsRepository _newsRepository;
+        
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public AdministrationController(ICoursesRepository coursesRepository, ICategoriesRepository categoriesRepository, INewsRepository newsRepository, UserManager<AppUser> userManager)
+        public AdministrationController(ICoursesRepository coursesRepository, 
+                                        ICategoriesRepository categoriesRepository, 
+                                        INewsRepository newsRepository, 
+                                        RoleManager<IdentityRole> roleManager, 
+                                        UserManager<AppUser> userManager)
         {
             _coursesRepository = coursesRepository;
             _categoriesRepository = categoriesRepository;
             _newsRepository = newsRepository;
+            _roleManager = roleManager;
             _userManager = userManager;
         }
 
@@ -64,7 +71,7 @@ namespace courses.Controllers
         [HttpGet]
         public async Task<IActionResult> EditUser(string id)
         {
-            AppUser user = await _userManager.FindByIdAsync(id);
+            AppUser? user = await _userManager.FindByIdAsync(id);
             EditUserViewModel editUserViewModel = new EditUserViewModel()
             {
                 Name = user.Name,
@@ -72,6 +79,7 @@ namespace courses.Controllers
                 Patronymic = user.Patronymic,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
+                
             };
 
             if (user != null) { return View(editUserViewModel); }
@@ -115,6 +123,51 @@ namespace courses.Controllers
                 return RedirectToAction("AllUsers");
             }
             return View(editUserViewModel);
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpGet]
+        public async Task<IActionResult> EditRole(string Id)
+        {
+            AppUser user = await _userManager.FindByIdAsync(Id);
+
+            if (user != null)
+            {
+                var userRoles = await _userManager.GetRolesAsync(user);
+                var allRoles = _roleManager.Roles.ToList();
+
+                EditRoleViewModel editRoleViewModel = new EditRoleViewModel
+                {
+                    UserId = user.Id,
+                    UserEmail = user.Email,
+                    UserRoles = userRoles,
+                    AllRoles = allRoles
+                };
+                return View(editRoleViewModel);
+            }
+            return NotFound();
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpPost]
+        public async Task<IActionResult> EditRole(string Id, List<string> roles)
+        {
+            AppUser user = await _userManager.FindByIdAsync(Id);
+
+            if (user != null)
+            {
+                var userRoles = await _userManager.GetRolesAsync(user);
+                var allRoles = _roleManager.Roles.ToList();
+
+                var addedRoles = roles.Except(userRoles);
+                var removedRoles = userRoles.Except(roles);
+
+                await _userManager.AddToRolesAsync(user, addedRoles);
+                await _userManager.RemoveFromRolesAsync(user, removedRoles);
+
+                return RedirectToAction("AllUsers");
+            }
+            return NotFound();
         }
         #endregion
 
@@ -171,7 +224,7 @@ namespace courses.Controllers
 
             EditCourseViewModel editCourseViewModel = new EditCourseViewModel
             {
-                Name = course.Title,
+                Title = course.Title,
                 ShortDescription = course.ShortDescription,
                 LongDescription = course.LongDescription,
                 Img = course.Img,
@@ -195,7 +248,7 @@ namespace courses.Controllers
             Courses course = new Courses()
             {
                 Id = id,
-                Title = editCourseViewModel.Name,
+                Title = editCourseViewModel.Title,
                 ShortDescription = editCourseViewModel.ShortDescription,
                 LongDescription = editCourseViewModel.LongDescription,
                 Img = editCourseViewModel.Img,
@@ -218,7 +271,7 @@ namespace courses.Controllers
             EditCourseViewModel EditCourseViewModel = new EditCourseViewModel
             {
                 Id = id,
-                Name = course.Title,
+                Title = course.Title,
                 ShortDescription = course.ShortDescription,
                 LongDescription = course.LongDescription,
                 Img = course.Img,
