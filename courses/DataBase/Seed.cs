@@ -64,19 +64,6 @@ namespace courses.DataBase
                     });
                     context.SaveChanges();
                 }
-
-                if (!context.News.Any())
-                {
-                    context.News.AddRange(new List<News>()
-                    {
-                        new News()
-                        {
-                            Title = "Тестовая новвость",
-                            Description = "Тестовое новостное описание"
-                        }
-                    });
-                    context.SaveChanges();
-                }
             }
         }
 
