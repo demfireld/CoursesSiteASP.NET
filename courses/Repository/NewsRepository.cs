@@ -13,7 +13,7 @@ namespace courses.Repository
         {
             _context = context;
         }
-        
+
         public async Task<IEnumerable<News>> GetAllAsync()
         {
             return await _context.News.ToListAsync();
