@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -17,8 +19,6 @@
                         <a class="title" asp-controller="Home" asp-action="Index">Центр патриотического воспитания</a>
                     </h2>
                 </div>
-
-                
 
                 @if (User.Identity.IsAuthenticated && User.IsInRole("admin"))
                 {
@@ -44,7 +44,7 @@
 
                     <div class="col-xl-3 col-lg-3 col-md-6 col-6 d-none d-lg-block">
                         <div class="nav-connect">
-                            <a class="account-button" asp-controller="Account" asp-action="Detail">
+                            <a class="account-button" asp-controller="DetailUser" asp-action="Detail" asp-route-id="@UserManager.GetUserAsync(User)">
                                 <i class="fa-regular fa-user" style="color: #ffffff;"></i>
                             </a>
                             <a class="login-button" asp-controller="Account" asp-action="Logout">Выход</a>
@@ -88,7 +88,7 @@
 
                     <div class="col-xl-3 col-lg-3 col-md-6 col-6 d-none d-lg-block">
                         <div class="nav-connect">
-                            <a class="account-button" asp-controller="Account" asp-action="Detail">
+                            <a class="account-button" asp-controller="DetailUser" asp-action="Detail" asp-route-id="@Model.Id">
                                 <i class="fa-regular fa-user" style="color: #ffffff;"></i>
                             </a>
                             <a class="login-button" asp-controller="Account" asp-action="Logout">Выход</a>
